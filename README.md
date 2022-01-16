@@ -11,7 +11,7 @@
 
 资料筛选准则：
 尽可能找源文章，
-尽可能找较新，
+尽可能找较新的文章，
 总结的较为全面的文章博客。
 
 站在巨人的肩膀上，可以看的更远。
@@ -19,6 +19,7 @@
 免责声明
 如有冒犯到你的版权，请和我联系删除。
 
+如转载请附上链接：[Awesome-Image-Retrieval](https://github.com/Manchester921/Awesome-Image-Retrieval) : https://github.com/Manchester921/Awesome-Image-Retrieval
 
 ## 1.1 文章
 
