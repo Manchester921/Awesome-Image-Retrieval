@@ -475,7 +475,9 @@ $$
 
 - 多视图学习利器 CCA 、加上多尺度信息
 
-- re-ranking：
+- re-ranking：QE(Query Expansion)
+  [2017-yongyuan：图像检索：拓展查询(Query Expansion)](https://yongyuan.name/blog/cbir-query-expansion.html)
+
 
 - ensemble：Voting、Averaging、Bagging、Boosting、Stacking
 
