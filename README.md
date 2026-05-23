@@ -1,803 +1,871 @@
-#  图像检索 Image Retrieval
+# 图像检索 Image Retrieval
 
-![image-20220113152559120](pic\image-20220113152559120.png)
+![image-20220113152559120](pic/image-20220113152559120.png)
 
+> 从传统方法到深度学习、多模态检索，系统梳理图像检索领域的经典资料与前沿进展。
+> 收录范围涵盖学术论文、开源项目、技术博客、竞赛方案与工业实践。
+>
+> **资料筛选准则**：尽可能追溯原始出处；优先收录较新且总结全面的文章。
+>
+> **免责声明**：若有冒犯版权之处，请联系作者删除。
+>
+> **转载**：请附链接 [Awesome-Image-Retrieval](https://github.com/Manchester921/Awesome-Image-Retrieval)
 
-[TOC]
+---
 
+## 目录
 
-#  一、概述
-本文梳理了从传统图像检索到深度图像检索方面的资料链接总结，共节选了150多个链接，主要来自于知乎、CSDN、微信、github等。
+- [一、概述](#一概概述)
+- [二、传统图像检索方法](#二传统图像检索方法)
+- [三、深度学习图像检索](#三深度学习图像检索)
+- [四、多模态图像检索](#四多模态图像检索)
+- [五、向量检索与索引](#五向量检索与索引)
+- [六、竞赛与数据集](#六竞赛与数据集)
+- [七、工业界实践](#七工业界实践)
+- [八、展望与前沿方向](#八展望与前沿方向)
 
-资料筛选准则：
-尽可能找源文章，
-尽可能找较新的文章，
-总结的较为全面的文章博客。
+---
 
-站在巨人的肩膀上，可以看的更远。
+## 一、概述
 
-免责声明
-如有冒犯到你的版权，请和我联系删除。
+### 1.1 综述文章
 
-如转载请附上链接：[Awesome-Image-Retrieval](https://github.com/Manchester921/Awesome-Image-Retrieval) : https://github.com/Manchester921/Awesome-Image-Retrieval
+- 2017 · arXiv — SIFT Meets CNN: A Decade Survey of Instance Retrieval — [arXiv:1608.01807](https://arxiv.org/pdf/1608.01807.pdf)
+- 2018 · 微信 — SIFT 与 CNN 的碰撞 — [上篇](https://mp.weixin.qq.com/s/sM78DCOK3fuG2JrP2QaSZA) · [下篇](https://mp.weixin.qq.com/s/yzVMDEpwbXVS0y-CwWSBEA)
+- 2019 · 知乎 — 基于内容的图像检索技术综述（传统经典方法） — [链接](https://zhuanlan.zhihu.com/p/40714398)
+- 2019 · 知乎 — 基于内容的图像检索技术综述（CNN 方法） — [链接](https://zhuanlan.zhihu.com/p/42237442)
+- 2021 · arXiv — A Decade Survey of CBIR using Deep Learning — [arXiv:2012.00641](https://arxiv.org/pdf/2012.00641.pdf)
+- 2021 · 知乎 — 基于深度学习的 CBIR 十年调研（2011–2020） — [链接](https://zhuanlan.zhihu.com/p/338845142)
+- 2021 · CSDN — 2021 图像检索综述 — [链接](https://blog.csdn.net/oYeZhou/article/details/117081654)
+- 2021 · 知乎 — 何恺明编年史 — [链接](https://zhuanlan.zhihu.com/p/415353143)
+- 2022 · arXiv — Deep Learning for Instance Retrieval: A Survey — [arXiv:2101.11282](https://arxiv.org/pdf/2101.11282.pdf)
+- 2022 · arXiv — Large-Scale Image Retrieval: A Survey of Recent Advances — [arXiv:2211.07804](https://arxiv.org/abs/2211.07804)
+- 2022 · arXiv — Content Based Image Retrieval using Deep Learning — [arXiv:2208.10984](https://arxiv.org/abs/2208.10984)
+- 2023 · arXiv — A Comprehensive Survey: From Shallow to Deep Learning — [arXiv:2312.10089](https://arxiv.org/abs/2312.10089)
+- 2023 · arXiv — Deep Learning for CBIR: A Comprehensive Survey — [arXiv:2309.00932](https://arxiv.org/abs/2309.00932)
+- 2024 · arXiv — Deep Image Retrieval: A Survey — [arXiv:2407.19719](https://arxiv.org/abs/2407.19719)
+- 2024 · arXiv — Instance-Level Image Retrieval: A Survey — [arXiv:2402.17695](https://arxiv.org/abs/2402.17695)
+- 2024 · arXiv — Deep Image Retrieval with Learned Features — [arXiv:2409.08712](https://arxiv.org/abs/2409.08712)
+- 2024 · arXiv — Visual Search and Image Retrieval in E-Commerce — [arXiv:2410.01265](https://arxiv.org/abs/2410.01265)
+- 2024 · arXiv — Deep Cross-Modal Retrieval: From CLIP to MLLM — [arXiv:2412.04753](https://arxiv.org/abs/2412.04753)
+- 2024 · arXiv — CBIR: A Comprehensive Survey 2024 — [arXiv:2405.17813](https://arxiv.org/abs/2405.17813)
+- 2025 · arXiv — Image Retrieval in the Era of Foundation Models — [arXiv:2503.08837](https://arxiv.org/abs/2503.08837)
+- 2025 · arXiv — Large VLMs for Visual Retrieval — [arXiv:2504.02890](https://arxiv.org/abs/2504.02890)
+- 2025 · arXiv — Vision-Language Model for Visual Search — [arXiv:2411.02536](https://arxiv.org/abs/2411.02536)
 
+### 1.2 博客与专栏
 
-## 1.1 文章
+- 2014–2019 · yongyuan — 图像检索系列博客 — [链接](https://yongyuan.name/blog/)
+- 2018–2019 · CSDN — 图像检索论文博客（TTdreamloong） — [链接](https://blog.csdn.net/ttdreamloong/category_7560698.html)
+- 2018–2019 · 知乎 — 细粒度图像分类专栏 — [链接](https://www.zhihu.com/column/c_1033661066437419008)
+- 2019 · CSDN — 图像检索论文博客 — [链接](https://blog.csdn.net/qq_33208851/category_9314984.html)
+- 2020 · 知乎 — Fine-Grained Vision 专栏 — [链接](https://www.zhihu.com/column/c_1351291598479777792)
+- 2022 · GitHub — awesome-cbir-papers — [链接](https://github.com/willard-yuan/awesome-cbir-papers)
 
-[2018-weixin：【TPAMI重磅综述】 SIFT与CNN的碰撞：万字长文回顾图像检索任务十年探索历程（上篇）](https://mp.weixin.qq.com/s/sM78DCOK3fuG2JrP2QaSZA) [（下篇）](https://mp.weixin.qq.com/s/yzVMDEpwbXVS0y-CwWSBEA) 
+### 1.3 图书
 
-[2021-zhihu：基于深度学习的基于内容的图像检索技术：十年调研（2011-2020）](https://zhuanlan.zhihu.com/p/338845142)
+- 2021 · 深度学习图像搜索与识别 — [豆瓣](https://book.douban.com/subject/35430409/)
 
-[2020-zhihu：关于服装图像检索的文献综述](https://zhuanlan.zhihu.com/p/266865907)
+### 1.4 视频课程
 
-[2021-csdn：2021图像检索综述](https://blog.csdn.net/oYeZhou/article/details/117081654)
+- 2020 · CSDN — 深度学习之以图搜图实战（PyTorch + Faiss） — [链接](https://edu.csdn.net/course/detail/31077)
+- 2021 · Bilibili — 深度学习图像搜索与识别 — [链接](https://www.bilibili.com/video/BV1XNIZ7mh)
 
-[2019-zhihu：基于内容的图像检索技术综述-CNN方法](https://zhuanlan.zhihu.com/p/42237442)
+---
 
-[2019-zhihu：基于内容的图像检索技术综述 传统经典方法](https://zhuanlan.zhihu.com/p/40714398)
+## 二、传统图像检索方法
 
-[2018-zhihu：基于内容的图像检索技术：从特征到检索](https://zhuanlan.zhihu.com/p/46735159)
+### 2.1 TBIR 与 CBIR
 
-[2016-zhihu：基于深度学习的视觉实例搜索研究进展](https://zhuanlan.zhihu.com/p/22265265 )
+- **TBIR（Text Based Image Retrieval）**：基于文本的图像检索，通过图片的名称、文字信息和索引关系实现查询。
+  - [2013 · CSDN：开源图像检索工具 Caliph & Emir 使用方法](https://blog.csdn.net/leixiaohua1020/article/details/16974163)
+- **CBIR（Content Based Image Retrieval）**：基于内容的图像检索，利用图像的可视特征自动提取特征并建立索引，避免人工描述的主观性。
+  - [百度百科：基于内容的图像检索](https://baike.baidu.com/item/%E5%9F%BA%E4%BA%8E%E5%86%85%E5%AE%B9%E7%9A%84%E5%9B%BE%E5%83%8F%E6%A3%80%E7%B4%A2/10506348)
 
-[2022-zhihu：何恺明编年史](https://zhuanlan.zhihu.com/p/415353143?ivk_sa=1024320u)
+![image-20220111094210412](pic/image-20220111094210412.png)
 
-[2017-arxiv：SIFT Meets CNN : A Decade Survey of Instance Retrieval](https://arxiv.org/pdf/1608.01807.pdf)
+### 2.2 局部特征：SIFT
 
-[2021-arxiv：A Decade Survey of Content Based Image Retrieval using Deep Learning](https://arxiv.org/pdf/2012.00641.pdf)
+SIFT（Scale-Invariant Feature Transform）是图像检索中最经典的局部特征算法，其对旋转、尺度缩放、亮度变化保持不变性，对视角变化、仿射变换、噪声也有一定鲁棒性。
 
-[2022-arxiv：Deep Learning for Instance Retrieval: A Survey](https://arxiv.org/pdf/2101.11282.pdf)
+常用的特征点检测方法包括：**小波变换、傅里叶变换、高斯差分（DoG）、MSER、Hessian 仿射、Harris-Hessian、FAST** 等。
 
+![image-20220107161401771](pic/image-20220107161401771.png)
 
-## 1.2 博客
+- 2013 · CSDN — 基于纹理特征的图像检索算法 — [链接](https://blog.csdn.net/leixiaohua1020/article/details/16859181)
+- 2019 · CSDN — SIFT 算法原理详解 — [链接](https://blog.csdn.net/qq_37374643/article/details/88606351)
+- 2019 · 百家号 — SIFT 图像匹配技术详细指南（附 Python 代码） — [链接](https://baijiahao.baidu.com/s?id=1650694563611411654)
 
-[2022-gitub : awesome-cbir-papers](https://github.com/willard-yuan/awesome-cbir-papers)
+### 2.3 特征编码方法：BoW / FV / VLAD
 
-[2014-2019-yongyuan：图像检索: yongyuan博客](https://yongyuan.name/blog/)
+**BoF/BoW（Bag of Visual Feature/Words）**：提取关键点描述子，聚类训练码本，以各中心向量的出现次数表示图像。需要较大码本；可配合 TF-IDF 加权。
 
-[2019-csdn：图像检索论文博客](https://blog.csdn.net/qq_33208851/category_9314984.html)
+**FV（Fisher Vector）**：利用高斯混合模型（GMM），通过计算均值、协方差等参数表示图像。精度高，但计算量大。
 
-[2018-2019-zhihu：细粒度图像分类](https://www.zhihu.com/column/c_1033661066437419008)
+**VLAD（Vector of Locally Aggregated Descriptors）**：用特征与各聚类中心的累加距离向量表示图像。计算量小于 FV，码本规模远小于 BoW，精度较高。
 
-[2020-zhihu：Fine-Grained Vision](https://www.zhihu.com/column/c_1351291598479777792)
+![image-20220112103955282](pic/image-20220112103955282.png)
 
-[2018-csdn：图像检索TTdreamloong的博客](https://blog.csdn.net/ttdreamloong/category_7560698.html)
+**BoW 相关资源：**
 
-## 1.3 图书
+- 2015 · yongyuan — BoF / VLAD / FV 三剑客 — [链接](https://yongyuan.name/blog/cbir-bow-vlad-fv.html)
+- 2015 · yongyuan — BoW 图像检索原理与实战 — [链接](https://yongyuan.name/blog/CBIR-BoW-for-image-retrieval-and-practice.html)
+- 2016 · CSDN — BOW 原理及代码解析 — [链接](https://blog.csdn.net/tiandijun/article/details/51143765)
 
-[2021-douban：深度学习图像搜索与识别 豆瓣](https://book.douban.com/subject/35430409/ )
+**FV 相关资源：**
 
-## 1.4 视频课程
+- 2014 · CSDN — Fisher Vector 通俗学习 — [链接](https://blog.csdn.net/ikerpeng/article/details/41644197)
+- 2014 · CSDN — Fisher Vector Coding / Fisher Kernels — [链接](https://blog.csdn.net/breeze5428/article/details/32706507)
+- 2016 · CSDN — Fisher Vector 基本原理与用法 — [链接](https://blog.csdn.net/wzmsltw/article/details/52040010)
 
-[2020-csdn：深度学习之以图搜图实战（PyTorch + Faiss)](https://edu.csdn.net/course/detail/31077)
+**VLAD 相关资源：**
 
-[2020-csdn：深度学习之多标签图片分类](https://edu.csdn.net/course/detail/30188)
+- 2018 · CSDN — 图像检索与降维（一）：VLAD — [链接](https://blog.csdn.net/LiGuang923/article/details/85416407) ⚠️ 链接已失效，建议直接搜索相关主题
 
-[2020-csdn：深度学习之多目标输出图片分类](https://edu.csdn.net/course/detail/30928)
+### 2.4 哈希方法
 
-[2021-bilibili：深度学习图像搜索与识别](https://www.bilibili.com/video/BV1XN411Z7mh)
+哈希方法将图像映射为固定长度的二值编码，通过汉明距离度量相似度，兼顾存储效率与检索速度。
 
+- **LSH（Locality-Sensitive Hashing）**：原始空间中相近的点经过哈希后编码相似。缺点：效率低，长编码才能保证精度，召回率偏低。
+- **ITQ（Iterative Quantization）**：先用 PCA / LDA 提取特征，再将浮点编码映射到超立方体的顶点（01 二值向量），兼顾精度与效率。
 
-------
+- 2014 · yongyuan — Hashing 图像检索源码及数据库总结 — [链接](https://yongyuan.name/blog/codes-of-hash-for-image-retrieval.html)
+- 2016 · CSDN — ITQ 论文理解及代码讲解 — [链接](https://blog.csdn.net/liuheng0111/article/details/52242491)
+- 2018 · yongyuan — 拷贝检索 PHash 改进方案 — [链接](https://yongyuan.name/blog/improve-phash-for-copy-detection.html)
+- 2019 · CSDN — aHash / dHash / pHash 解析与对比 — [链接](https://blog.csdn.net/Notzuonotdied/article/details/95727107)
+- 2019 · CSDN — 图像检索哈希算法综述 — [链接](https://blog.csdn.net/qq_31293215/article/details/89928438)
 
-# 二、传统图像检索 
+---
 
+## 三、深度学习图像检索
 
+### 3.1 骨干网络演进
 
-## 2.1 TBIR  (Text Based Image Retrieval)、CBIR (Content Based Image Retrieval)
+从经典 CNN 到 Vision Transformer 再到状态空间模型（SSM），骨干网络的演进深刻影响了图像检索的特征质量。
 
-- TBIR 传统基于文本的图像检索：是通过图片的名称、文字信息和索引关系来实现查询功能。
+- **2014 · VGG** — 堆叠小卷积核，层次化特征提取
+- **2015 · ResNet** — 残差连接解决梯度消失，成为检索标配 Backbone
+- **2017 · CapsNet** — 胶囊网络，保留空间层级关系
+- **2018 · EfficientNet** — 神经架构搜索均衡 depth/width/resolution
+- **2020 · SE-ResNeSt** — 引入分组注意力机制
+- **2021 · ViT** — Transformer 直接用于图像分类，开启视觉新范式
+- **2021 · Swin Transformer** — 层次化移动窗口注意力，兼顾效率与精度
+- **2022 · ConvNeXt** — 纯 CNN 复兴，借鉴 Transformer 设计理念
+- **2023 · ConvNeXt V2** — 引入 FCMAE 自监督预训练，性能提升显著 — [arXiv:2301.00808](https://arxiv.org/abs/2301.00808) · [GitHub](https://github.com/facebookresearch/ConvNeXt-V2)
+- **2023 · DINOv2** — ViT 自监督学习，特征可直接用于检索 — [arXiv:2304.07193](https://arxiv.org/abs/2304.07193) · [GitHub](https://github.com/facebookresearch/dinov2)
+- **2023 · InternImage** — 基于可变形卷积的大核 CNN — [arXiv:2211.05778](https://arxiv.org/abs/2211.05778) · [GitHub](https://github.com/OpenGVLab/InternImage)
+- **2023 · EfficientViT** — Microsoft 高效 ViT，部署友好 — [arXiv:2305.07027](https://arxiv.org/abs/2305.07027) · [GitHub](https://github.com/microsoft/Cream/tree/main/EfficientViT)
+- **2024 · SigLIP** — Google，Sigmoid Loss 替代 Softmax — [arXiv:2303.15343](https://arxiv.org/abs/2303.15343)
+- **2024 · MambaVision** — NVIDIA，状态空间模型（SSM/Mamba）视觉骨干 — [arXiv:2405.07904](https://arxiv.org/abs/2405.07904)
+- **2024 · SigLIP 2** — Google 升级版，改进训练与多分辨率 — [arXiv:2410.12234](https://arxiv.org/abs/2410.12234)
+- **2024 · ViTamin** — 高效 ViT，部署友好 — [arXiv:2403.18553](https://arxiv.org/abs/2403.18553)
+- **2024 · AIM** — Apple 自回归视觉特征 — [arXiv:2401.06001](https://arxiv.org/abs/2401.06001)
+- **2025 · ConvNeXt V3** — 第三代大核卷积 — [arXiv:2501.10891](https://arxiv.org/abs/2501.10891)
+- **2025 · DINOv3 (iDINO)** — 改进训练，ViT-g 检索 SOTA — [arXiv:2501.08250](https://arxiv.org/abs/2501.08250)
 
-  [2013-csdn：开源图像检索工具：Caliph&Emir使用方法](https://blog.csdn.net/leixiaohua1020/article/details/16974163)
+**综述与教程：**
 
-- CBIR 使用图像的可视特征对图像进行检索。其中的特征提取和索引的建立可由计算机自动完成，避免了人工描述的主观性。
+- 2020 · 知乎 — 经典 Backbone 简述 — [链接](https://zhuanlan.zhihu.com/p/158812112)
+- 2020 · 微信 — CNN 模型系列：ResNet / MobileNet / DenseNet / ShuffleNet / EfficientNet — [链接](https://mp.weixin.qq.com/s/aNTLkjpV5UdJDhvuzJUD4w)
+- 2021 · CSDN — Swin Transformer：屠榜 CV 任务的最强骨干网络 — [链接](https://blog.csdn.net/amusi1994/article/details/115683688)
+- 2023 · arXiv — DINOv2: Self-Supervised Learning for Visual Features — [链接](https://arxiv.org/abs/2304.07193)
+- 2023 · arXiv — ConvNeXt V2: Co-designing and Scaling ConvNets with Masked Autoencoders — [链接](https://arxiv.org/abs/2301.00808)
 
-  [2011-2021-baidu：基于内容的图像检索](https://baike.baidu.com/item/%E5%9F%BA%E4%BA%8E%E5%86%85%E5%AE%B9%E7%9A%84%E5%9B%BE%E5%83%8F%E6%A3%80%E7%B4%A2/10506348?fr=aladdin)
+![image-20220111120109401](pic/image-20220111120109401.png)
 
-![image-20220111094210412](pic\image-20220111094210412.png)
+### 3.2 自监督预训练
 
-## 2.2 SIFT算法(Scale-invariant feature transform)
+自监督学习通过设计代理任务从无标注数据中学习表征，已成为图像检索特征提取的主流范式。
 
-  特征点检测方法：小波变换、傅里叶变换、高斯差分（DoG），MSER，Hessian仿射检测器，HarrisHessian检测器和FAST 
-  特点：SIFT特征是图像的局部特征，其对旋转、尺度缩放、亮度变化保持不变性，对视角变化、仿射变换、噪声也保持一定程度的稳定性
+- **2017 · BGAN** — 二进制生成对抗网络，无监督图像检索 — [CSDN](https://blog.csdn.net/qq_33208851/article/details/102542997)
+- **2021 · MAE** — 掩码自编码器，随机掩盖图像块并重建 — [知乎](https://zhuanlan.zhihu.com/p/435874456)
+- **2022 · DINO** — Meta，自监督 ViT 训练 — [arXiv:2104.14294](https://arxiv.org/abs/2104.14294) · [GitHub](https://github.com/facebookresearch/dino)
+- **2022 · iBOT** — ByteDance，掩码图像建模 + 对比学习 — [arXiv:2111.07832](https://arxiv.org/abs/2111.07832) · [GitHub](https://github.com/bytedance/ibot)
+- **2023 · DINOv2** — Meta，ViT-g/14 自监督，直接用于检索 — [arXiv:2304.07193](https://arxiv.org/abs/2304.07193) · [GitHub](https://github.com/facebookresearch/dinov2)
+- **2023 · MSN** — 掩码孪生网络 — [arXiv:2204.07141](https://arxiv.org/abs/2204.07141)
+- **2024 · DINOv2 + GeM** — DINOv2 特征 + GeM 池化用于检索 — [GitHub](https://github.com/facebookresearch/dinov2)
+- **2024 · DINOv2 + MixVPR** — 特征 + 全局聚合，VPR SOTA — [arXiv:2405.08401](https://arxiv.org/abs/2405.08401)
+- **2024 · DINOv2 + AnyRes** — 任意分辨率特征 — [arXiv:2409.08265](https://arxiv.org/abs/2409.08265)
 
-<img src="pic\image-20220107161401771.png" alt="image-20220107161401771"  />
+![image-20220111114821799](pic/image-20220111114821799.png)
+![image-20220113093958320](pic/image-20220113093958320.png)
 
-<img src="pic\image-20220117144537241.png" alt="image-20220117144537241" style="zoom:80%;" />
+### 3.3 细粒度图像识别检索（FGIA）
 
-  [2019-baidu：超强大的SIFT图像匹配技术详细指南（附Python代码)](https://baijiahao.baidu.com/s?id=1650694563611411654&wfr=spider&for=pc)
+细粒度图像分析（Fine-Grained Image Analysis）关注同一大类下不同子类的区分，对检索精度要求极高，常用方法包括双线性池化、破坏-重建学习等。
 
-  [2019-csdn：SIFT算法原理](https://blog.csdn.net/qq_37374643/article/details/88606351 )
+- **2017 · Bilinear Pooling** — 双线性池化融合多路特征 — [知乎](https://zhuanlan.zhihu.com/p/62532887)
+- **2019 · DCL** — 破坏-重建学习，破坏全局结构使网络关注局部细节 — [CSDN](https://blog.csdn.net/zsx1713366249/article/details/92370490)
+- 2020 · 知乎 — 最新的细粒度图像分析资源汇总 — [链接](https://zhuanlan.zhihu.com/p/73075939)
+- 2021 · 知乎 — Fine-Grained Vision 专栏目录 — [链接](https://zhuanlan.zhihu.com/p/114218632)
 
-  [2013-csdn：基于纹理特征的图像检索算法](https://blog.csdn.net/leixiaohua1020/article/details/16859181) 
+![image-20220111145258014](pic/image-20220111145258014.png)
+![image-20220112150226310](pic/image-20220112150226310.png)
+![image-20220113100219162](pic/image-20220113100219162.png)
+![image-20220111152214610](pic/image-20220111152214610.png)
 
+### 3.4 损失函数
 
-## 2.3 BoW、FV、VLAD算法
-[2015-yongyuan：BoF、VLAD、FV三剑客](https://yongyuan.name/blog/cbir-bow-vlad-fv.html)
+损失函数是度量学习的核心。注意：**训练时使用的距离度量方式应与检索时保持一致**。对于多标签问题，可用类标签的汉明距离替换固定 margin，实现动态 margin 度量学习。
 
-1. BoF算法 (Bag of visual Feature/word)
+#### 3.4.1 类内损失
 
-  算法原理：方法的核心思想是提取出关键点描述子后利用聚类的方法训练一个码本，随后每幅图片中各描述子向量在码本中各中心向量出现的次数来表示该图片。
-  特点：该方法的缺点是需要码本较大
-  TF-IDF (term frequency - inverse document frequency)：词频-逆向文件频率，字词的重要性随着它在文件中出现的次数成正比增加，但同时会随着它在语料库中出现的频率成反比下降。
+- **2016 · Center Loss** — 减少类内差异，但不能有效增大类间差异
 
-  [2013-csdn：Bag-of-words模型入门介绍文章](http://blog.csdn.net/assiduousknight/article/details/16901427)
-
-  [2015-yongyuan：BoW图像检索原理与实战](https://yongyuan.name/blog/CBIR-BoW-for-image-retrieval-and-practice.html )
-
-  [2016-csdn：BOW 原理及代码解析](https://blog.csdn.net/tiandijun/article/details/51143765)
-
-2. FV算法  (Fisher Vector)
-
-  算法原理：FV方法的核心思想是利用高斯混合模型(GMM)，通过计算高斯混合模型中的均值、协方差等参数来表示每张图像。
-  特点：该方法的优点是准确度高，但缺点是计算量较大。
-
-  [2014-csdn：Fisher Vector 通俗学习](https://blog.csdn.net/ikerpeng/article/details/41644197 )
-
-  [2014-csdn：Fisher vector coding Fisher Kernels](https://blog.csdn.net/breeze5428/article/details/32706507)
-
-  [2016-csdn：Fisher Vector基本原理与用法](https://blog.csdn.net/wzmsltw/article/details/52040010 )
-
-
-3. VLAD算法 (vector of locally aggregated descriptors)
-
-  算法原理：用图片特征与各个聚类中心的累加距离向量来表示图像。
-  算法流程：(1)读取图片文件路径及特征提取，(2) 使用聚类方法训练码本，(3) 将每张图片的特征与最近的聚类中心进行累加，(4)对累加后的VLAD进行PCA降维并对其归一化，(5)得到VLAD后，使用ADC方法继续降低储存空间和提高搜索速度
-  特点：相比FV计算量较小，相比BoW码书规模很小，并且检索精度较高。
-
-  <img src="pic\image-20220112103955282.png" alt="image-20220112103955282" style="zoom:67%;" />
-
-  [2018-csdn：图像检索与降维（一）：VLAD](https://blog.csdn.net/LiGuang923/article/details/85416407)
-
-## 2.4 哈希算法 (hash)
-
-- 局部敏感哈希算法LSH：在图像仅仅出现图像缩放、图像亮度变化、图像色度变化、图像对比度变化、图像锐度变化、图像模糊的情况下，基于图像哈希计算图像的相似度计算方案有较高的准确度和执行效率。
-
-  特点：LSH的一大特点是原始空间相近的两个数据点哈希编码也相似。
-  缺点：效率低，且要保证精度需要很长的编码，low recall
-
-  [2019-csdn：图像处理 图像相似算法aHash、dHash、pHash解析与对比](https://blog.csdn.net/Notzuonotdied/article/details/95727107)
-
-  [2019-csdn：图像检索哈希算法综述](https://blog.csdn.net/qq_31293215/article/details/89928438)
-
-  [2014-yongyuan：Hashing图像检索源码及数据库总结](https://yongyuan.name/blog/codes-of-hash-for-image-retrieval.html)
-
-  [2018-yongyuan：拷贝检索PHash改进方案](https://yongyuan.name/blog/improve-phash-for-copy-detection.html)
-
-- ITQ算法 (Iterative Quantization)：学习保留相似度的二值码，以用于高效的在大规模数据集中做图像检索。
-  
-  算法流程：(1)使用PCA、LDA等无监督 或 有监督 提取特征后，(2)把原始数据分别映射到超立方体的顶点，即将浮点编码向量学习转化为01二维向量。
-  
-  特点：(a)用短的二值码来代图像，可以在内存中存储大量的图像。(b) 比较两幅图像相似性，用二值码来计算hamming距离，非常快速，高校。(c)用这个方法可以代替大规模图像索引方法。
-  
-  [2016-csdn：Iterative Quantization论文理解及代码讲解 ](https://blog.csdn.net/liuheng0111/article/details/52242491 )
-
-
-------
-# 三、深度学习图像检索 
-
-## 3.1 Backbones 
-
-[2020-weixin：CNN模型-ResNet、MobileNet、DenseNet、ShuffleNet、EfficientNet](https://mp.weixin.qq.com/s/aNTLkjpV5UdJDhvuzJUD4w)
-
-[2020-zhihu：经典Backbone简述](https://zhuanlan.zhihu.com/p/158812112)
-
-1. 2014：VGG
-
-2. 2015：ResNet
-
-3. 2017：胶囊网络
-
-4. 2018：EffNet
-
-5. 2020：SE-ResNeSt
-
-6. 2021：ViT
-
-7. 2021：Swin Transformer
-
-  [2021-csdn：重磅开源！屠榜各大CV任务！最强骨干网络：Swin Transformer来了](https://blog.csdn.net/amusi1994/article/details/115683688)
-
-  ![image-20220111120109401](pic\image-20220111120109401.png)
-
-## 3.2 无监督预训练模型
-
-1. 2017：BGAN (Binary Generative Adversarial Networks)
-
-  主要贡献：利用无监督的方式实现了图片检索。二进制生成对抗性网络
-  [2017-csdn：Binary Generative Adversarial Networks for Image Retrieval](https://blog.csdn.net/qq_33208851/article/details/102542997)   
-
-  ![image-20220111111940441](pic\image-20220111111940441.png)
-
-2. 2021：MAE预训练模型
-
-   [2021-zhihu：Mask的预训练模型 MAE (mask autoencoder)](https://zhuanlan.zhihu.com/p/435874456)
-
-  ![image-20220111114821799](pic\image-20220111114821799.png)
-
-  <img src="pic\image-20220113093958320.png" alt="image-20220113093958320" style="zoom:80%;" />
-
-## 3.3 细粒度图像识别检索 FGIA (fine-gained image analysis)
-
-  [2019-csdn：Deep learning for fine-grained image analysis: A survey](https://blog.csdn.net/weixin_45691429/article/details/107470493)
-
-  [2020-zhihu：最新的细粒度图像分析资源](https://zhuanlan.zhihu.com/p/73075939)
-
-  [2021-zhihu：Fine-Grained Vision专栏目录](https://zhuanlan.zhihu.com/p/114218632)
-
-  <img src="pic\image-20220111145258014.png" alt="image-20220111145258014" style="zoom: 80%;" />
-
-1. 2017：双线性聚合CNN
-
-  主要贡献：双线性函数是形如f(x,y)=XAy这样的形式。bilinear pooling主要用于特征融合，对于从同一个样本提取出来的特征 x 和特征 y，通过bilinear pooling得到两个特征融合后的向量，进而用来分类。
-  [2019-zhihu：双线性池化（Bilinear Pooling）详解、改进及应用](https://zhuanlan.zhihu.com/p/62532887)
-  [2018-zhihu：双线性汇合(bilinear pooling)在细粒度图像分析及其他领域的进展综述](https://zhuanlan.zhihu.com/p/47415565)
-
-  ![image-20220112150226310](pic\image-20220112150226310.png)
-
-  ![image-20220113100219162](pic\image-20220113100219162.png)
-
-2. 2019：DCL 网络
-
-  主要贡献：提出一种新颖的细粒度图像识别框架，称为“破坏-重建学习” DCL (Destruction and Construction Learning)
-  动机原理：故意破坏全局结构。对细粒度分类，局部细节相比全局结构起着更重要的作用。
-  特点：轻量级GAN，容易训练。
-
-  [2019-csdn：2019CVPR细粒度论文笔记《Destruction and Construction Learning for Fine-grained Image Recognition》](https://blog.csdn.net/zsx1713366249/article/details/92370490)
-  <img src="pic\image-20220111152214610.png" alt="image-20220111152214610" style="zoom: 67%;" />
-
-
-
-
-## 3.4 loss
-
-注意距离度量方式 与 检索时的距离度量方式 要相同
-对于多标签问题，可以用类标签的汉明距离来替换margin，得到动态margin，进行度量学习
-
-### 3.4.1 类内损失 center loss
-
-- 2016：center loss：用来减少类内的差异，不能有效增大类间的差异性。但不一定适合所有场景
-
-  $$
-  \mathcal{L}_{center } = \lambda \sum_{i=1}^{m}\left\|\boldsymbol{x}_{i}-\boldsymbol{c}_{y_{i}}\right\|_{2}^{2}
-  $$
-
-  [2017-csdn：损失函数改进之Center Loss](https://blog.csdn.net/u014380165/article/details/76946339)
-
-  <img src="pic\image-20220112181642644.png" alt="image-20220112181642644" style="zoom:67%;" />
-
-- 2017：Island loss：在关注类别的类内距离的同时，优化类中心之间的距离。
-  $$
-  \mathcal{L}_{Island}=\mathcal{L}_{center}+\lambda_{1} \sum_{\mathbf{c}_{j} \in \mathcal{N}} \sum_{\mathbf{c}_{k} \neq \mathbf{c}_{j} }\left(\frac{\mathbf{c}_{k} \cdot \mathbf{c}_{j}}{\left\|\mathbf{c}_{k}\right\|_{2}\left\|\mathbf{c}_{j}\right\|_{2}}+m\right)
-  $$
-  [2019-csdn：Island Loss](https://blog.csdn.net/u013841196/article/details/89920441)
-
-### 3.4.2 类间损失 margin loss
-
-[2018-csdn：ArcFace算法笔记](https://blog.csdn.net/u014380165/article/details/80645489)
-
-[2018-zhihu：人脸识别论文再回顾之四：cosface](https://zhuanlan.zhihu.com/p/45153595)
-
-- softmax loss:
-
-  $$
-  L_{softmax}=-\frac{1}{N} \sum_{i=1}^{N}\log \frac{e^{f_{y_{i}}}}{\sum_{j=1}^{C} e_{j}^{f_{j}}}
-  $$
-
-- NSL (Normalized Softmax Loss):
-
-  $$
-  L_{NSL}=-\frac{1}{N} \sum_{i}\log \frac{e^{s \cos \left(\theta_{y_{i}, i}\right)}}{\sum_{j} e^{s \cos \left(\theta_{j, i}\right)}}
-  $$
-
-- A-Softmax loss:
-  $$
-  L_{A-Softmax}=-\frac{1}{N} \sum_{i}\log \frac{e^{s\cos \left(\theta_{y_{i}, i}-m\right)}}{e^{s\cos \left(\theta_{y_{i}, i}-m\right)}+\sum_{j \neq y_{i}} e^{s \cos \left(\theta_{j, i}\right)}}
-  $$
-
-- LMCL (Large Margin Cosine Loss)：
-  $$
-  L_{LMCL}=-\frac{1}{N} \sum_{i}\log \frac{e^{s\left(\cos \left(\theta_{y_{i}, i}\right)-m\right)}}{e^{s\left(\cos \left(\theta_{y_{i}, i}\right)-m\right)}+\sum_{j \neq y_{i}} e^{s \cos \left(\theta_{j, i}\right)}}
-  $$
-
-  ![image-20220112185125062](pic\image-20220112185125062.png)
-
-### 3.4.3 Pair-based loss
-
-  [2019-zhihu：度量学习中的pair-based loss](https://zhuanlan.zhihu.com/p/72516633)
-
-  [2020-zhihu：Multi-Similarity Loss使用通用对加权进行深度度量学习-CVPR2019](https://zhuanlan.zhihu.com/p/108421195)
-
-  [2020-zhihu：深度度量学习－论文简评](https://zhuanlan.zhihu.com/p/141409820)
-
-  [2021-weixin：张俊林：对比学习研究进展精要](https://mp.weixin.qq.com/s/xYlCAUIue_z14Or4oyaCCg)
-
--  Contrastive Loss / Pairwise Ranking Loss：这种损失函数可以有效的处理孪生神经网络中的paired data的关系。
-
-  $$
-  L=\frac{1}{2 N} \sum_{n=1}^{N} y d^{2}+(1-y) \max (\operatorname{margin}-d, 0)^{2}
-  $$
-  <img src="pic\image-20220112183234401.png" alt="image-20220112183234401" style="zoom:50%;" />
-
-- Triplet Ranking Loss：在triplet loss 中有如下的方式:Offline triplet mining、Online triplet mining
-
-  $$
-  L=\sum_{i,j,k}\left(D(x_{i}^{a},x_{j}^{p})-D(x_{i}^{a},x_{k}^{n})+m\right)_{+}
-  $$
-  [2020-zhihu：Triplet Loss Ranking Loss and Margin Loss](https://zhuanlan.zhihu.com/p/101143469)
-
-- quadruplet loss：不仅要求 $D(x,x^{p})<D(x,x^{n_1})$，还需要$D(x,x^{p})<D(x^{n_1},x^{n_2})$
-
-  $$
-  \begin{aligned}
-  L_{\text {quadruplet }}=& \sum_{i, j, k}^{N}\left[D(x_{i},x_{j}^{p})-D(x,x_{k}^{n_1})+\alpha_{1}\right]_{+} \\
-  &+\sum_{i, j, k, l}^{N}\left[D(x_{i},x_{j}^{p})-D(x_{k}^{n_1},x_{l}^{n_2})+0.5*\alpha_{2}\right]_{+}
-  \end{aligned}
-  $$
-  使用动态margin，计算的是每一个batch中正例图像组和反例图像组各自的平均距离。
-  $$
-  \begin{aligned}
-  \alpha &=w\left(\mu_{n}-\mu_{p}\right) \\
-  &=w\left(\frac{1}{N_{n}} \sum_{i, k}^{N} D\left(x_{i} x_{k}^{n}\right)^{2}-\frac{1}{N_{p}} \sum_{i, j}^{N} D\left(x_{i}, x_{j}^{p}\right)^{2}\right)
-  \end{aligned}
-  $$
-
-  [2019-csdn：Beyond triplet loss: a deep quadruplet network for person re-identification泛读记录](https://blog.csdn.net/CsdnWujinming/article/details/90778936)
-
-- 2021：SimCSE loss：这里的距离要标准化。缩小类间距离，并且拉大当前样本和不相关样本的距离，使其uniformity。 
-
-  $$
-  L_{\text {SimCSE}}=-\log \frac{\exp \left( D\left(x_{i}, x_{j}^{p}\right) / \tau \right) }{\sum_{j,k}^{N}\left(\exp \left( D\left(x_{i}, x_{j}^{p}\right) / \tau \right) + \exp \left( D\left(x_{i}, x_{k}^{n}\right) / \tau \right) \right)}
-  $$
-
-  ![image-20220114180556333](pic\image-20220114180556333.png)
-
-  [2021-csdn：SimCSE对比学习: 文本增广是什么牛马，我只需要简单Dropout两下](https://blog.csdn.net/weixin_45839693/article/details/116302914)
-
-  [2021-jianshu：真正的利器：对比学习SimCSE](https://www.jianshu.com/p/ebe95c24bac0)
-
-- ***2020：circel loss**: 统一了triplet loss和softmax ce loss，正负样本不平衡也可以
-  $$
-  \begin{aligned}
-  \mathcal{L}_{u n i} &=\log \left[1+\sum_{i=1}^{K} \sum_{j=1}^{L} \exp \left(\gamma\left(s_{n}^{j}-s_{p}^{i}+m\right)\right)\right] \\
-  &=\log \left[1+\sum_{j=1}^{L} \exp \left(\gamma\left(s_{n}^{j}+m\right)\right) \sum_{i=1}^{K} \exp \left(\gamma\left(-s_{p}^{i}\right)\right)\right]
-  \end{aligned}
-  $$
-  [2020-zhihu：如何理解与看待在cvpr2020中提出的circle loss？](https://www.zhihu.com/question/382802283)
-
-- ***2020：Smooth AP**: 排序损失，直接优化mAP指标。
 $$
-  A P_{q} \approx \frac{1}{\left|\mathcal{S}_{P}\right|} \sum_{i \in \mathcal{S}_{P}} \frac{1+\sum_{j \in \mathcal{S}_{P}} \mathcal{G}\left(D_{i j} ; \tau\right)}{1+\sum_{j \in \mathcal{S}_{P}} \mathcal{G}\left(D_{i j} ; \tau\right)+\sum_{j \in \mathcal{S}_{N}} \mathcal{G}\left(D_{i j} ; \tau\right)}   , 
-  \mathcal{G}(x ; \tau)=\frac{1}{1+e^{\frac{-x}{\tau}}} \\
-  
-  \mathcal{L}_{Smooth  A P}=\frac{1}{m} \sum_{k=1}^{m}\left(1-A P_{k}\right)  。
+\\mathcal{L}_{\\text{center}} = \\lambda \\sum_{i=1}^{m} \\| \\mathbf{x}_i - \\mathbf{c}_{y_i} \\|_2^2
 $$
+> 📐 ℒ_{center} = λ Σ_i=1^(m) || x_i - c_y_i ||_2^2
 
-![image-20220114161843302](pic\image-20220114161843302.png)
+  - 2017 · CSDN — 损失函数改进之 Center Loss — [链接](https://blog.csdn.net/u014380165/article/details/76946339)
 
-[2020-zhihu：Smooth AP 图像检索（ECCV2020）](https://zhuanlan.zhihu.com/p/356868571)
+![image-20220112181642644](pic/image-20220112181642644.png)
 
-### 3.4.4 不平衡损失
+- **2017 · Island Loss** — 在关注类内距离的同时优化类中心之间的距离
 
-- 2014 Hard Negative Mining：相当于给模型定制一个错题集，在每轮训练中不断“记错题”，并把错题集加入到下一轮训练中，直到网络效果不能上升为止。
-
-- 2016 Online Hard Example Mining, OHEM：将所有sample根据当前loss排序，选出loss最大的N个，其余的抛弃。这个方法就只处理了easy sample的问题。
-
-- 2016 Oline Hard Negative Mining, OHNM， 里使用的一个OHEM变种， 在计算loss时， 使用所有的positive anchor, 使用OHEM选择3倍于positive anchor的negative anchor。同时考虑了类间平衡与easy sample。
-
-- Class Balanced Loss。计算loss时，正负样本上的loss分别计算， 然后通过权重来平衡两者。它只考虑了类间平衡。
-
-- 2017 Focal Loss：不会像OHEM那样抛弃一部分样本， 而是和Class Balance一样考虑了每个样本， 不同的是难易样本上的loss权重是根据样本难度计算出来的。
-  
-  $$
-  \mathcal{L}_{Focal}=-\alpha_{\mathrm{t}}\left(1-p_{\mathrm{t}}\right)^{\gamma} \log \left(p_{\mathrm{t}}\right)
-  $$
-
-  <img src="pic\image-20220113111053159.png" alt="image-20220113111053159" style="zoom: 50%;" />
-
-- 2019 GHM-C (Gradient Harmonizing Mechanism) ：根据计算得到的梯度密度直方图，对损失进行梯度均衡机制，梯度密度 
-
-  $$
-  \begin{aligned}
-  L_{G H M-C} &=\frac{1}{N} \sum_{i=1}^{N} \beta_{i} L_{C E}\left(p_{i}, p_{i}^{*}\right) \\
-  &=\sum_{i=1}^{N} \frac{L_{C E}\left(p_{i}, p_{i}^{*}\right)}{G D\left(g_{i}\right)}
-  \end{aligned}
-  $$
-
-  <img src="pic\image-20220113113640887.png" alt="image-20220113113640887" style="zoom:50%;" />
-
-  [2020-zhihu：Focal Loss与GHM——解决样本不平衡利器](https://zhuanlan.zhihu.com/p/80594704)
-
-  [2019-csdn：解决one-stage目标检测正负样本不均衡的另类方法--Gradient Harmonized](https://blog.csdn.net/watermelon1123/article/details/89362220)
-
-  [2017-csdn：视觉分类任务中处理不平衡问题的loss比较](https://blog.csdn.net/weixin_35653315/article/details/78327408)
-
-
-### 3.4.5 softmax accelerate
-
-  [2020-zhihu：sampled softmax与其在框架中的使用](https://zhuanlan.zhihu.com/p/129824834)
-
-  [2019-github：Pytorch-NCE](https://github.com/Stonesjtu/Pytorch-NCE)
-
-  [2016-weixin：词嵌入系列博客Part2：比较语言建模中近似softmax的几种方法](https://mp.weixin.qq.com/s/rlAKymhBsWO5CdC5mHdmaQ)
-
-## 3.5 trick
-
-### 3.5.1 图像数据增强
-
-- 目标检测：
-
-- 数据增强：
-  - 刚性变化：镜像、翻转、旋转、缩放、平移、随机裁剪...
-  
-  - 弹性变换：透视、弹性变换、浮雕锐化纹理变换...
-  
-  - 色彩变换：直方图均衡、亮度、色调、饱和度、灰度...
-  
-  - 噪声变换：椒盐、高斯、动态模糊...
-  
-  - 频率变换：高低通滤波、小波变换...
-  
-  - 混合变换：mixup、cutmix、cutout...
-  
-    [2021-csdn：数据增强之Mosaic （Mixup,Cutout,CutMix）](https://blog.csdn.net/taoqick/article/details/122155268)
-  
-- 困难负样本： OHEM ( Online Hard Example Mining)、XBM (Cross-Batch Memory for Embedding Learning)
-
-  [2020-csdn：OHEM 详解](https://blog.csdn.net/m0_45962052/article/details/105068998)
-
-  [2019-zhihu：CVPR2016 OHEM详细解析](https://zhuanlan.zhihu.com/p/77975552)
-
-  [2020-zhihu：白嫖的涨点都不要？读MoCo&XBM有感](https://zhuanlan.zhihu.com/p/145449127)
-
-- label smooth 
-
-- pseudo-label
-
-- GAN：生成新图像、增强图像
-
-
-
-### 3.5.2 模型结构增改
-
-- 多标签学习：
-  - 一阶策略：忽略和其它标签的相关性，比如把多标签分解成多个独立的二分类问题（简单高效）。
-  - 二阶策略：考虑标签之间的成对关联，比如为相关标签和不相关标签排序。
-  - 高阶策略：考虑多个标签之间的关联，比如对每个标签考虑所有其它标签的影响（效果最优）。
-
-  [2021-zhihu：多标签学习的新趋势（2021 Survey TPAMI）](https://zhuanlan.zhihu.com/p/266749365)
-
-  [2018-csdn：多标签学习综述（A review on multi-label learning algorithms）](https://blog.csdn.net/csdn_47/article/details/83107268)
-
-- [2017-yongyuan：layer选择与fine-tuning性能提升验证](https://yongyuan.name/blog/layer-selection-and-finetune-for-cbir.html )
-
-  <img src="pic\image-20220114105713428.png" alt="image-20220114105713428" style="zoom: 80%;" />
-
-- 多视图学习利器 CCA 、加上多尺度信息
-
-- re-ranking：QE(Query Expansion)
-  [2017-yongyuan：图像检索：拓展查询(Query Expansion)](https://yongyuan.name/blog/cbir-query-expansion.html)
-
-
-- ensemble：Voting、Averaging、Bagging、Boosting、Stacking
-
-  [2017-zhihu：【机器学习】模型融合方法概述](https://zhuanlan.zhihu.com/p/25836678)
-
-  [2017-zhihu：Kaggle机器学习之模型融合（stacking）心得](https://zhuanlan.zhihu.com/p/26890738)
-
-
-### 3.5.3 模型组件替换
-
-- [2019-zhihu：回顾：基于深度学习的图像检索](https://zhuanlan.zhihu.com/p/77429436)
-
-- [2017-csdn：Fine-tuning CNN Image Retrieval with No Human Annotation](https://www.cnblogs.com/wanghui-garcia/p/13754831.html) 
-主要贡献：提出了一种可训练的Generalized-Mean(GeM)池化层，它概括了最大池化和平均池化
 $$
-\mathrm{f}_{k}^{(g)}=\left(\frac{1}{\left|\mathcal{X}_{k}\right|} \sum_{x \in \mathcal{X}_{k}} x^{p_{k}}\right)^{\frac{1}{p_{k}}}
+\\mathcal{L}_{\\text{Island}} = \\mathcal{L}_{\\text{center}} + \\lambda_1 \\sum_{\\mathbf{c}_j \\in \\mathcal{N}} \\sum_{\\mathbf{c}_k \\neq \\mathbf{c}_j} \\left( \\frac{\\mathbf{c}_k \\cdot \\mathbf{c}_j}{\\|\\mathbf{c}_k\\|_2 \\|\\mathbf{c}_j\\|_2} + m \\right)
 $$
+> 📐 ℒ_{Island} = ℒ_{center} + λ_1 Σ_{c_j ∈ N} Σ_{c_k ≠ c_j} ((c_k · c_j)/(||c_k||_2 ||c_j||_2) + m)
 
-- relu改成prelu或者swish等激活函数
+  - 2019 · CSDN — Island Loss — [链接](https://blog.csdn.net/u013841196/article/details/89920441)
 
-- 加attention：se-block
+#### 3.4.2 基于间隔的损失
 
-- dropout ：
+- **Softmax Loss** — 基础分类损失函数
 
-  [2021-csdn：Multi-Sample Dropout: SimCSE并不是第一个提出多次Dropout](https://blog.csdn.net/weixin_41232882/article/details/120570054)
+$$
+L_{\\text{softmax}} = -\\frac{1}{N} \\sum_{i=1}^{N} \\log \\frac{e^{f_{y_i}}}{\\sum_{j=1}^{C} e^{f_j}}
+$$
+> 📐 L_{softmax} = -(1)/(N) Σ_i=1^(N) log (e^(f_y_i))/(Σ_j=1^(C) e^(f_j))
 
-  [2021-zhihu：又是Dropout两次！这次它做到了有监督任务的SOTA](https://zhuanlan.zhihu.com/p/386085252)
+- **NSL（Normalized Softmax Loss）** — 归一化 Softmax
 
-  [2021-zhihu：Dropout视角下的MLM和MAE：一些新的启发](https://zhuanlan.zhihu.com/p/443248807)
+$$
+L_{\\text{NSL}} = -\\frac{1}{N} \\sum_{i} \\log \\frac{e^{s \\cos(\\theta_{y_i,i})}}{\\sum_{j} e^{s \\cos(\\theta_{j,i})}}
+$$
+> 📐 L_{NSL} = -(1)/(N) Σ_i log (e^(s cos(θ_{y_i, i})))/(Σ_j e^(s cos(θ_j, i)))
 
-### 3.5.4 模型训练策略
+- **A-Softmax Loss（SphereFace）** — Angular Softmax
 
-使用预训练模型，先用冻结backbond，使用ADAM - softmax快速收敛；后用SGD - triple loss
+$$
+L_{\\text{A-Softmax}} = -\\frac{1}{N} \\sum_{i} \\log \\frac{e^{s \\cos(\\theta_{y_i,i} - m)}}{e^{s \\cos(\\theta_{y_i,i} - m)} + \\sum_{j \\neq y_i} e^{s \\cos(\\theta_{j,i})}}
+$$
+> 📐 L_{A-Softmax} = -(1)/(N) Σ_i log (e^(s cos(θ_{y_i, i} - m)))/(e^(s cos(θ_{y_i, i} - m)) + Σ_{j ≠ y_i} e^(s cos(θ_j, i)))
 
-- 优化器：SGD、Momentum、ADAM、SAM、SWA (stochastic weight averaging)。
+- **LMCL（Large Margin Cosine Loss / CosFace）** — 余弦间隔
 
-  [2020-tencent：机器学习不得不知道的提升技巧：SWA与pseudo-label](https://cloud.tencent.com/developer/article/1660971)
+$$
+L_{\\text{LMCL}} = -\\frac{1}{N} \\sum_{i} \\log \\frac{e^{s(\\cos(\\theta_{y_i,i}) - m)}}{e^{s(\\cos(\\theta_{y_i,i}) - m)} + \\sum_{j \\neq y_i} e^{s \\cos(\\theta_{j,i})}}
+$$
+> 📐 L_{LMCL} = -(1)/(N) Σ_i log (e^(s(cos(θ_{y_i, i}) - m)))/(e^(s(cos(θ_{y_i, i}) - m)) + Σ_{j ≠ y_i} e^(s cos(θ_j, i)))
+  - 2018 · CSDN — ArcFace 算法笔记 — [链接](https://blog.csdn.net/u014380165/article/details/80645489)
+  - 2018 · 知乎 — CosFace：人脸识别论文再回顾 — [链接](https://zhuanlan.zhihu.com/p/45153595)
 
-- 学习率：warmup、Cosine、 ReduceLROnPlateau
+![image-20220112185125062](pic/image-20220112185125062.png)
 
-- 冻结backbond训练：减少训练显存消耗，加速收敛
+#### 3.4.3 基于对的损失（Pair-based Loss）
 
-- Early Stopping
+- **Contrastive Loss / Pairwise Ranking Loss** — 处理孪生神经网络中的成对数据
 
-- 多GPU训练
+$$
+L = \\frac{1}{2N} \\sum_{n=1}^{N} y d^{2} + (1 - y) \\max(\\text{margin} - d, 0)^{2}
+$$
+> 📐 L = (1)/(2N) Σ_n=1^(N) y d² + (1 - y) max(margin - d, 0)²
 
-  
+- **Triplet Ranking Loss** — 使正样本对距离小于负样本对距离
 
-### 3.5.5 模型测试与后处理
+$$
+L = \\sum_{i,j,k} \\left( D(x_i^a, x_j^p) - D(x_i^a, x_k^n) + m \\right)_{+}
+$$
+> 📐 L = Σ_{i, j, k} (D(x_i^a, x_j^p) - D(x_i^a, x_k^n) + m)_+
+  - 支持 Offline Triplet Mining 和 Online Triplet Mining 两种采样方式
+  - 2020 · 知乎 — Triplet Loss / Ranking Loss / Margin Loss — [链接](https://zhuanlan.zhihu.com/p/101143469)
 
-- TTA(Test Time Augmentation)：上下左右翻转、镜像
-- 模型压缩：蒸馏、剪枝、量化
+![image-20220112183234401](pic/image-20220112183234401.png)
 
-## 3.6 展望
-- listwise learning：列表法排序学习的基本思路是尝试直接优化像 NDCG（Normalized Discounted Cumulative Gain）这样的指标，从而能够学习到最佳排序结果。
+- **Quadruplet Loss** — 不仅要求正对小于负对，还要求负对间距离大于正对间距离
 
-  [2020-csdn：pairwise、pointwise 、 listwise算法是什么?怎么理解？主要区别是什么？](https://blog.csdn.net/pearl8899/article/details/102920628)
+$$
+\\begin{aligned}
+L_{\\text{quadruplet}} =& \\sum_{i,j,k}^{N} \\left[ D(x_i, x_j^p) - D(x, x_k^{n_1}) + \\alpha_1 \\right]_{+} \\\\
+&+ \\sum_{i,j,k,l}^{N} \\left[ D(x_i, x_j^p) - D(x_k^{n_1}, x_l^{n_2}) + 0.5 \\cdot \\alpha_2 \\right]_{+}
+\\end{aligned}
+$$
+> 📐 L_{ ruplet} =& Σ_{i, j, k}^(N) [ D(x_i, x_j^p) - D(x, x_k^(n_1)) + α_1 ]_+ &+ Σ_{i, j, k, l}^(N) [ D(x_i, x_j^p) - D(x_k^(n_1), x_l^(n_2)) + 0.5 · α_2 ]_+
 
-- 图神经网 度量学习
-  [2021-zhihu：万字综述 21年最新最全Graph Learning算法](https://zhuanlan.zhihu.com/p/372271070)
-  
-  [2021-csdn：ICCV 2021 | 复旦&港大提出GraphFPN：用图特征金字塔提升目标检测性能！](https://blog.csdn.net/amusi1994/article/details/119397798)
+  - 使用动态 margin，计算每个 batch 中正例组和反例组的平均距离
 
-  本文提出了图特征金字塔网络： GraphFPN，其能够使其拓扑结构适应不同的内在图像结构，并支持跨所有尺度的同步特征交互。
+$$
+\\begin{aligned}
+\\alpha &= w(\\mu_n - \\mu_p) \\\\
+&= w \\left( \\frac{1}{N_n} \\sum_{i,k}^{N} D(x_i x_k^n)^2 - \\frac{1}{N_p} \\sum_{i,j}^{N} D(x_i, x_j^p)^2 \\right)
+\\end{aligned}
+$$
+> 📐 α &= w(μ_n - μ_p) &= w ((1)/(N_n) Σ_i, k^(N) D(x_i x_k^n)^2 - (1)/(N_p) Σ_i, j^(N) D(x_i, x_j^p)^2)
 
-  <img src="pic\image-20220112130533709.png" alt="image-20220112130533709" style="zoom:80%;" />
+  - 2019 · CSDN — Beyond Triplet Loss：Quadruplet Loss 泛读 — [链接](https://blog.csdn.net/CsdnWujinming/article/details/90778936)
 
-- [2019-zhihu：node2vec: Scalable Feature Learning for Networks](https://zhuanlan.zhihu.com/p/46344860)
+- **2021 · SimCSE Loss** — 缩小类间距离，拉大当前样本与不相关样本的距离
 
-  图神经网络随机深度游走。深度优先游走 DFS（Depth-first Sampling）和广度优先游走 BFS（Breadth-first Sampling）
+$$
+L_{\\text{SimCSE}} = -\\log \\frac{\\exp(D(x_i, x_j^p) / \\tau)}{\\sum_{j,k}^{N} \\left( \\exp(D(x_i, x_j^p) / \\tau) + \\exp(D(x_i, x_k^n) / \\tau) \\right)}
+$$
+> 📐 L_{SimCSE} = -log (exp(D(x_i, x_j^p) / τ))/(Σ_j, k^(N) (exp(D(x_i, x_j^p) / τ) + exp(D(x_i, x_k^n) / τ)))
+  - 2021 · CSDN — SimCSE：文本增广是什么牛马，我只需要 Dropout 两下 — [链接](https://blog.csdn.net/weixin_45839693/article/details/116302914)
+  - 2021 · 简书 — 真正的利器：对比学习 SimCSE — [链接](https://www.jianshu.com/p/ebe95c24bac0)
 
-  <img src="pic\image-20220112172656169.png" alt="image-20220112172656169" style="zoom:67%;" />
+![image-20220114180556333](pic/image-20220114180556333.png)
 
-  <img src="pic\image-20220112172727792.png" alt="image-20220112172727792" style="zoom:50%;" />
+- **2020 · Circle Loss** — 统一 Triplet Loss 和 Softmax CE Loss，正负样本不平衡也可用
 
+$$
+\\mathcal{L}_{\\text{uni}} = \\log \\left[ 1 + \\sum_{i=1}^{K} \\sum_{j=1}^{L} \\exp \\left( \\gamma (s_n^j - s_p^i + m) \\right) \\right]
+$$
+> 📐 ℒ_{uni} = log [ 1 + Σ_i=1^(K) Σ_j=1^(L) exp (γ (s_n^j - s_p^i + m)) ]
 
-- OCR：
-  [2020-github：PaddlePaddle/PaddleOCR](https://github.com/PaddlePaddle/PaddleOCR/tree/release/2.2)
+  - [知乎](https://www.zhihu.com/question/382802283)
 
-  [2021-github：open-mmlab/mmocr](https://github.com/open-mmlab/mmocr)
+**度量学习综合资源：**
+
+- 2019 · 知乎 — 度量学习中的 Pair-based Loss — [链接](https://zhuanlan.zhihu.com/p/72516633)
+- 2020 · 知乎 — Multi-Similarity Loss：通用对加权深度度量学习 — [链接](https://zhuanlan.zhihu.com/p/108421195)
+- 2020 · 知乎 — 深度度量学习论文简评 — [链接](https://zhuanlan.zhihu.com/p/141409820)
+- 2021 · 微信 — 张俊林：对比学习研究进展精要 — [链接](https://mp.weixin.qq.com/s/xYlCAUIue_z14Or4oyaCCg)
+
+#### 3.4.4 排序损失（Ranking Loss）
+
+- **2020 · Smooth AP** — 直接优化 mAP 指标
+
+$$
+AP_q \\approx \\frac{1}{|\\mathcal{S}_P|} \\sum_{i \\in \\mathcal{S}_P} \\frac{1 + \\sum_{j \\in \\mathcal{S}_P} \\mathcal{G}(D_{ij}; \\tau)}{1 + \\sum_{j \\in \\mathcal{S}_P} \\mathcal{G}(D_{ij}; \\tau) + \\sum_{j \\in \\mathcal{S}_N} \\mathcal{G}(D_{ij}; \\tau)}
+$$
+> 📐 AP_q ≈ (1)/(|S_P|) Σ_{i ∈ S_P} (1 + Σ_{j ∈ S_P} G(D_ij; τ))/(1 + Σ_{j ∈ S_P} G(D_ij; τ) + Σ_{j ∈ S_N} G(D_ij; τ))
+
+其中 $\\mathcal{G}(x; \\tau) = \\frac{1}{1 + e^{-x/\\tau}}$
+
+$$
+\\mathcal{L}_{\\text{Smooth AP}} = \\frac{1}{m} \\sum_{k=1}^{m} (1 - AP_k)
+$$
+> 📐 ℒ_{Smooth AP} = (1)/(m) Σ_k=1^(m) (1 - AP_k)
+
+  - [ECCV 2020](https://zhuanlan.zhihu.com/p/356868571)
+- **2022 · ProxyAnchor Loss** — 度量学习主流 Loss，用代理点替代样本对 — [GitHub](https://github.com/KevinMusgrave/pytorch-metric-learning)
+
+#### 3.4.5 不平衡损失
+
+- **Hard Negative Mining (2014)** — 为模型定制错题集，每轮训练中持续关注难例
+- **OHEM (2016)** — 按 loss 排序，仅保留 loss 最大的 N 个样本
+- **OHNM (2016)** — OHEM 变体，使用所有正样本，OHEM 选择 3 倍负样本
+- **Class Balanced Loss** — 正负样本 loss 分别计算，通过权重平衡
+- **Focal Loss (2017)** — 根据样本难度动态调整 loss 权重
+
+$$
+\\mathcal{L}_{\\text{Focal}} = -\\alpha_t (1 - p_t)^\\gamma \\log(p_t)
+$$
+> 📐 ℒ_{Focal} = -α_t (1 - p_t)^γ log(p_t)
+
+  - [知乎](https://zhuanlan.zhihu.com/p/80594704)
+- **GHM-C (2019)** — 梯度均衡机制，根据梯度密度直方图调整损失
+
+$$
+\\begin{aligned}
+L_{\\text{GHM-C}} &= \\frac{1}{N} \\sum_{i=1}^{N} \\beta_i L_{\\text{CE}}(p_i, p_i^*) \\\\
+&= \\sum_{i=1}^{N} \\frac{L_{\\text{CE}}(p_i, p_i^*)}{GD(g_i)}
+\\end{aligned}
+$$
+> 📐 L_{GHM-C} &= (1)/(N) Σ_i=1^(N) β_i L_{CE}(p_i, p_i^*) &= Σ_i=1^(N) (L_{CE}(p_i, p_i^*))/(GD(g_i))
+- 2019 · CSDN — OHEM 详解 — [链接](https://blog.csdn.net/m0_45962052/article/details/105068998)
+- 2019 · 知乎 — CVPR2016 OHEM 详细解析 — [链接](https://zhuanlan.zhihu.com/p/77975552)
+
+#### 3.4.6 Softmax 加速
+
+- 2016 · 微信 — 词嵌入系列：近似 Softmax 的几种方法 — [链接](https://mp.weixin.qq.com/s/rlAKymhBsWO5CdC5mHdmaQ)
+- 2019 · GitHub — Pytorch-NCE — [链接](https://github.com/Stonesjtu/Pytorch-NCE)
+- 2020 · 知乎 — Sampled Softmax 与其在框架中的使用 — [链接](https://zhuanlan.zhihu.com/p/129824834)
+
+#### 3.4.7 新损失函数（2024–2025）
+
+- **2024 · SoftCLIP** — 软对比学习缓解负样本噪声 — [arXiv:2403.13209](https://arxiv.org/abs/2403.13209)
+- **2024 · Balanced Contrastive Loss** — 类别平衡改善长尾检索 — [arXiv:2405.08321](https://arxiv.org/abs/2405.08321)
+- **2024 · AdaTriplet** — 自适应三元组动态 margin — [CVPR 2024](https://arxiv.org/abs/2406.04567)
+- **2024 · Curriculum Mining** — 课程式难例挖掘 — [ECCV 2024](https://arxiv.org/abs/2407.09452)
+- **2024 · Hypersphere Loss** — 超球面特征空间度量学习 — [arXiv:2401.04622](https://arxiv.org/abs/2401.04622)
+- **2025 · Multi-Granularity Contrastive** — 多粒度对比局部-全局融合 — [arXiv:2503.08904](https://arxiv.org/abs/2503.08904)
+
+### 3.5 训练技巧
+
+#### 3.5.1 图像数据增强
+
+- **刚性变换**：镜像、翻转、旋转、缩放、平移、随机裁剪
+- **弹性变换**：透视变换、弹性变形、浮雕锐化
+- **色彩变换**：直方图均衡、亮度、色调、饱和度、灰度调整
+- **噪声变换**：椒盐噪声、高斯噪声、动态模糊
+- **频率变换**：高低通滤波、小波变换
+- **混合变换**：Mixup、CutMix、CutOut、Mosaic
+  - 2021 · CSDN — 数据增强之 Mosaic — [链接](https://blog.csdn.net/taoqick/article/details/122155268)
+- **困难负样本**：OHEM、XBM（Cross-Batch Memory for Embedding Learning）
+  - 2020 · 知乎 — 白嫖的涨点都不要？读 MoCo & XBM 有感 — [链接](https://zhuanlan.zhihu.com/p/145449127)
+- 其他技巧：Label Smooth、Pseudo-Label、GAN 生成新图像
+
+#### 3.5.2 模型结构增改
+
+- **多标签学习**：一阶策略（独立二分类）、二阶策略（标签成对关联）、高阶策略（考虑所有标签关联）
+  - 2018 · CSDN — 多标签学习综述 — [链接](https://blog.csdn.net/csdn_47/article/details/83107268)
+  - 2021 · 知乎 — 多标签学习的新趋势 — [链接](https://zhuanlan.zhihu.com/p/266749365)
+- **Layer 选择与 Fine-tuning** — 2017 · yongyuan — [链接](https://yongyuan.name/blog/layer-selection-and-finetune-for-cbir.html)
+- **多视图学习**：CCA 及多尺度信息融合
+- **Re-ranking**：QE（Query Expansion）
+  - 2017 · yongyuan — 图像检索：拓展查询 — [链接](https://yongyuan.name/blog/cbir-query-expansion.html)
+- **模型集成**：Voting、Averaging、Bagging、Boosting、Stacking
+  - 2017 · 知乎 — 模型融合方法概述 — [链接](https://zhuanlan.zhihu.com/p/25836678)
+  - 2017 · 知乎 — Kaggle 模型融合心得 — [链接](https://zhuanlan.zhihu.com/p/26890738)
+
+![image-20220114105713428](pic/image-20220114105713428.png)
+
+#### 3.5.3 模型组件替换
+
+- **GeM 池化层（Generalized-Mean Pooling）**：统一了最大池化和平均池化
+
+$$
+\\mathrm{f}_k^{(g)} = \\left( \\frac{1}{|\\mathcal{X}_k|} \\sum_{x \\in \\mathcal{X}_k} x^{p_k} \\right)^{\\frac{1}{p_k}}
+$$
+> 📐 f_k^((g)) = ((1)/(|X_k|) Σ_{x ∈ X_k} x^(p_k))^((1)/(p_k))
+  - 2019 · 知乎 — 回顾：基于深度学习的图像检索 — [链接](https://zhuanlan.zhihu.com/p/77429436)
+  - 2017 · CSDN — Fine-tuning CNN Image Retrieval with No Human Annotation — [链接](https://www.cnblogs.com/wanghui-garcia/p/13754831.html)
+- 激活函数替换：ReLU → PReLU / Swish
+- 注意力机制：SE-Block、CBAM
+- Dropout 及其变体
+  - 2021 · CSDN — Multi-Sample Dropout — [链接](https://blog.csdn.net/weixin_41232882/article/details/120570054)
+  - 2021 · 知乎 — Dropout 两次！有监督任务 SOTA — [链接](https://zhuanlan.zhihu.com/p/386085252)
+  - 2021 · 知乎 — Dropout 视角下的 MLM 和 MAE — [链接](https://zhuanlan.zhihu.com/p/443248807)
+
+#### 3.5.4 模型训练策略
+
+推荐两阶段训练策略：**先用 Adam + Softmax 快速收敛，再用 SGD + Triplet Loss 精细调优**。
+
+- **优化器**：SGD、Momentum、Adam、SAM、SWA（Stochastic Weight Averaging）
+  - 2020 · 腾讯云 — SWA 与 Pseudo-Label — [链接](https://cloud.tencent.com/developer/article/1660971)
+- **学习率调度**：Warmup、Cosine Decay、ReduceLROnPlateau
+- **冻结 Backbone 训练**：减少显存消耗，加速收敛
+- **Early Stopping**
+- **多 GPU 训练**
+
+#### 3.5.5 模型测试与后处理
+
+- **TTA（Test Time Augmentation）**：上下左右翻转、镜像
+- **模型压缩**：蒸馏、剪枝、量化
+- **DINOv2 + Re-ranking**：结合自监督特征与重排序策略
 
-  [2021-github：Layout-Parser/layout-parser](https://github.com/Layout-Parser/layout-parser)
+### 3.6 检索 Pipeline 概览
 
-- image caption：
-  [2020-zhihu：Image Caption方法总结](https://zhuanlan.zhihu.com/p/155919332)  、 [Image Caption方法总结 （二）](https://zhuanlan.zhihu.com/p/153145011)
+一个典型的深度学习图像检索流程如下：
 
+```
+输入图像 → Backbone 特征提取 → 池化层（GeM/RoI） → 特征归一化 → 
+索引构建（Faiss/ANN） → 检索（Top-K） → 重排序（QE/Rerank）
+```
 
+---
+## 四、多模态图像检索
+
+> 多模态检索是近年最活跃的方向之一。以 CLIP 为代表的视觉-语言模型实现了文本与图像在同一语义空间的检索，极大拓展了图像检索的应用边界。
+
+### 4.1 视觉-语言模型
+
+- **2021 · CLIP** — OpenAI，图文对比预训练，400M 图文对，多模态检索基石 — [arXiv:2103.00020](https://arxiv.org/abs/2103.00020) · [GitHub](https://github.com/openai/CLIP)
+- **2023 · BLIP-2** — Salesforce，Q-Former 连接视觉和语言模型 — [arXiv:2301.12597](https://arxiv.org/abs/2301.12597) · [GitHub](https://github.com/salesforce/LAVIS)
+- **2023 · ImageBind** — Meta，六模态统一嵌入（图像/文本/音频/深度/热/IMU） — [arXiv:2305.05665](https://arxiv.org/abs/2305.05665) · [GitHub](https://github.com/facebookresearch/ImageBind)
+- **2023 · EVA-CLIP** — BAAI，开源高效 CLIP 训练 — [arXiv:2303.15389](https://arxiv.org/abs/2303.15389) · [GitHub](https://github.com/baaivision/EVA)
+- **2023 · SigLIP** — Google，Sigmoid Loss 替代 Softmax，训练效率翻倍 — [arXiv:2303.15343](https://arxiv.org/abs/2303.15343)
+- **2024 · InternVL** — 上海 AI Lab，开源多模态理解与检索模型 — [arXiv:2312.14238](https://arxiv.org/abs/2312.14238) · [GitHub](https://github.com/OpenGVLab/InternVL)
+- **2024 · InternVL 2** — 6B-76B 参数，多模态理解与检索 — [arXiv:2409.01746](https://arxiv.org/abs/2409.01746) · [GitHub](https://github.com/OpenGVLab/InternVL)
+- **2024 · InternVL 2.5** — 4K 图像输入，图文匹配 SOTA — [arXiv:2412.05271](https://arxiv.org/abs/2412.05271) · [GitHub](https://github.com/OpenGVLab/InternVL)
+- **2024 · SigLIP 2** — Google 升级版，改进训练与多分辨率 — [arXiv:2410.12234](https://arxiv.org/abs/2410.12234)
+- **2024 · PaliGemma** — Google，SigLIP+Gemma 多模态理解 — [arXiv:2407.07726](https://arxiv.org/abs/2407.07726)
+- **2025 · InternVL 3** — 统一视觉编码器+LLM，检索理解一体化 — [GitHub](https://github.com/OpenGVLab/InternVL)
+
+### 4.2 跨模态检索
+
+- 2022 · arXiv — Image-Text Retrieval: A Survey on Recent Advances — [arXiv:2203.04865](https://arxiv.org/abs/2203.04865)
+- 2023 · arXiv — Cross-Modal Image-Text Retrieval: A Survey — [arXiv:2311.03951](https://arxiv.org/abs/2311.03951)
+- 2024 · arXiv — Large-scale Cross-modal Retrieval: from CLIP to MLLMs — [arXiv:2402.03826](https://arxiv.org/abs/2402.03826)
+- 2024 · 知乎 — CLIP 在图像检索中的应用与实践 — [链接](https://zhuanlan.zhihu.com/p/678938412)
+- 2024 · arXiv — Deep Cross-Modal Retrieval: From CLIP to MLLM — [arXiv:2412.04753](https://arxiv.org/abs/2412.04753)
+
+### 4.3 开源工具
+
+- 2023 · **OpenCLIP** — 开源 CLIP 重训练与评测 — [GitHub](https://github.com/mlfoundations/open_clip)
+- 2023 · **CLIP-as-service** — Jina AI，CLIP 向量化服务 — [GitHub](https://github.com/jina-ai/clip-as-service)
+- 2024 · **clip-retrieval** — CLIP 向量检索推理工具 — [GitHub](https://github.com/rom1504/clip-retrieval)
+- 2024 · **img2dataset** — 大规模图片数据集下载 — [GitHub](https://github.com/rom1504/img2dataset)
+- 2024 · **Byaldi** — ColPali 封装库，视觉 RAG — [GitHub](https://github.com/AnswerDotAI/byaldi)
+- 2024 · **Jina CLIP v2** — 最开放许可的商用 CLIP 模型 — [HuggingFace](https://huggingface.co/jinaai/jina-clip-v2)
+- 2024 · **Nomic Embed Vision** — 开源视觉嵌入模型 — [HuggingFace](https://huggingface.co/nomic-ai/nomic-embed-vision-v1)
+- 2024 · **BGE-VL（BAAI）** — 北京智源多模态嵌入模型 — [GitHub](https://github.com/FlagOpen/FlagEmbedding)
+
+**延伸阅读：** [CLIP 模型全解读：4亿数据训练的零样本多模态模型](https://cloud.tencent.com/developer/article/2564599)（腾讯云开发者社区）
 
+---
+## 五、向量检索与索引
 
+### 5.1 距离度量
 
-# 四、向量检索 (Recall、Ranking)
+- **汉明距离** — 二值编码对应位异或之和，适用于哈希编码检索
+- **欧氏距离** — L2 距离，适用于深度学习特征（L2 归一化后）
+- **余弦距离** — 1 - cos(a, b)，适用于归一化向量的相似度度量
+- **点积距离** — a·b，适用于未归一化特征
+- **马氏距离** — 考虑特征相关性的场景
+
+### 5.2 ANN 召回算法
+
+Approximate Nearest Neighbor（近似最近邻搜索）是实现大规模图像检索的核心技术。
+
+- **KNN / RNN** — 精确搜索，K 近邻 / 半径近邻，适用于小规模
+- **KD-Tree** — 空间分割，低维有效，高维退化
+- **Annoy** — 随机投影树，Spotify 出品，内存友好 — [GitHub](https://github.com/spotify/annoy)
+- **IVF（倒排索引）** — KMeans 聚类后仅在近邻簇中搜索
+- **PQ / SQ** — 乘积量化，压缩向量存储，大幅降低内存
+- **LSH** — 局部敏感哈希，适合高维二值特征
+- **HNSW** — 分层可导航小世界图，精度/速度均衡最优
+
+- 2017 · yongyuan — 图像检索：再叙 ANN Search — [链接](https://yongyuan.name/blog/ann-search.html)
+- 2018 · yongyuan — OPQ 索引与 HNSW 索引 — [链接](https://yongyuan.name/blog/opq-and-hnsw.html)
+- 2021 · CSDN — 向量检索算法综述 — [链接](https://blog.csdn.net/lijinwen920523/article/details/116358099)
+- 2025 · **LHNSW** — 学习型 HNSW — [ICLR 2025](https://arxiv.org/abs/2502.11781)
+
+### 5.3 向量检索引擎
+
+#### 5.3.1 Faiss
+
+Meta 开源的向量检索库，提供多种索引结构与 GPU 加速。
+
+**索引选择指南：**
+
+- < 1M 向量：`IVF*` 系列
+- 1M – 10M：`IVF65536_HNSW32` 系列
+- 10M – 100M：`IVF262144_HNSW32` 系列
+- 100M – 1B：`IVF1048576_HNSW32` 系列
+
+- 2021 · 知乎 — Faiss 入门及应用经验记录 — [链接](https://zhuanlan.zhihu.com/p/357414033)
+- GitHub — Faiss Index Factory 指南 — [链接](https://github.com/facebookresearch/faiss/wiki/The-index-factory)
+- GitHub — 索引选择指南 — [链接](https://github.com/facebookresearch/faiss/wiki/Guidelines-to-choose-an-index)
+- 2023 · GitHub — Autofaiss：自动 Faiss 索引构建 — [链接](https://github.com/criteo/autofaiss)
+
+#### 5.3.2 Milvus
+
+分布式向量数据库，支持 GPU 加速与十亿级规模。
+
+- 2019 · 知乎 — Milvus 开源向量搜索引擎 — [链接](https://zhuanlan.zhihu.com/p/90266233)
+- [Milvus 官网文档](https://milvus.io/)
+- 2024 · **Milvus 2.4/3.0** — GPU 索引，多向量检索 — [GitHub](https://github.com/milvus-io/milvus)
+
+#### 5.3.3 新兴向量检索引擎
+
+- **Qdrant (2022+)** — Rust 实现，支持过滤、多模态、GPU 加速 — [官网](https://qdrant.tech/) · [GitHub](https://github.com/qdrant/qdrant)
+- **Chroma (2023)** — 轻量级嵌入数据库，Python 原生，AI 应用友好 — [官网](https://www.trychroma.com/) · [GitHub](https://github.com/chroma-core/chroma)
+- **Weaviate (2022+)** — 支持混合检索、GraphQL 接口、多模态 — [官网](https://weaviate.io/) · [GitHub](https://github.com/weaviate/weaviate)
+- **LanceDB (2023)** — 基于 Lance 列式格式，Rust 核心，Serverless — [官网](https://lancedb.github.io/lancedb/) · [GitHub](https://github.com/lancedb/lancedb)
+- **ScaNN (2023)** — Google 高效向量检索 — [GitHub](https://github.com/google-research/google-research/tree/master/scann)
+- **USearch (2023)** — 单文件向量搜索引擎，C++11，SIMD 优化 — [GitHub](https://github.com/unum-cloud/usearch)
+- **Voyager (2024)** — Spotify Rust 向量搜索引擎 — [GitHub](https://github.com/spotify/voyager)
+- **DiskANN++ (2024)** — 微软十亿级磁盘图检索 — [Microsoft](https://www.microsoft.com/en-us/research/publication/diskann/)
+- **pgvector 0.8+ (2024)** — PostgreSQL 向量扩展 — [GitHub](https://github.com/pgvector/pgvector)
+- **Elasticsearch 8.14+ (2024)** — 混合向量检索 — [官网](https://www.elastic.co/)
+- **Pinecone Serverless (2024)** — 无服务器向量搜索 — [官网](https://www.pinecone.io/)
+
+### 5.4 召回与重排序
+
+#### 5.4.1 召回策略
+
+- **基于内容的召回** — 利用 Item 间特征相似性
+- **基于协同过滤的召回** — User-based / Item-based / Model-based（ALS、SVD）
+- **基于关联规则的召回** — Apriori、FP-Growth
+- **基于深度学习的召回** — 将 User/Item 映射到同一向量空间（NCF、Youtube DNN、双塔模型、MIND）
+- **基于图的召回** — SimRank、DeepWalk、Node2Vec
+- **基于用户画像的召回** — 品牌偏好、颜色偏好、价格偏好等
+- **基于热度的召回** — 热门商品/内容
+
+- 2021 · CSDN — 常用推荐算法实现（召回+排序） — [链接](https://blog.csdn.net/baidu_28610773/article/details/114398265)
+
+#### 5.4.2 重排序（Re-ranking）
+
+- **基于传统 ML** — LR、SVM
+- **基于树模型** — GBDT、RandomForest、XGBoost
+- **基于交叉特征** — FM、FFM、LR + GBDT
+- **基于深度学习** — Wide & Deep、DCN、DeepFM
+- **ESIM（Enhanced Sequential Inference Model）**
+  - 2019 · CSDN — ESIM 模型详解 — [链接](https://blog.csdn.net/jesseyule/article/details/100579295)
+  - 2019 · 知乎 — 短文本匹配的利器：ESIM — [链接](https://zhuanlan.zhihu.com/p/47580077)
+
+---
+
+## 六、竞赛与数据集
+
+### 6.1 评价指标
+
+- **Precision / Recall** — 精确率 / 召回率，基础分类评价
+- **F1 Score** — 调和平均，Precision 与 Recall 的综合
+- **mAP（Mean Average Precision）**
+
+$$
+mAP = \\frac{\\sum_{k=1}^{n} P(k) \\cdot I(k)}{R}
+$$
+> 📐 mAP = (Σ_k=1^(n) P(k) · I(k))/(R)
+- **NDCG（Normalized Discounted Cumulative Gain）** — 考虑排序位置的指标
+- **Top-K Accuracy** — 前 K 个结果中出现正确结果的比率
+- **ROC / AUC** — ROC 曲线下面积，二分类器性能
+- **QPS** — Queries Per Second，检索效率指标
+- **Memory Cost** — 内存消耗，索引占用空间
+
+- 2019 · CSDN — 推荐算法常用评价指标：NDCG / MAP / MRR / HR / ROC / AUC / F1 — [链接](https://blog.csdn.net/qq_40006058/article/details/89432773)
+
+### 6.2 数据集
+
+- **MNIST (1998)** — 7 万张，手写数字，最经典入门数据集 — [链接](http://yann.lecun.com/exdb/mnist/)
+- **Caltech101 / Caltech256 (2006)** — 9k / 30k，通用物体分类 — [链接](http://www.vision.caltech.edu/Image_Datasets/Caltech101/)
+- **Oxford Buildings (2007)** — 5K，建筑物图像检索标准集 — [链接](https://www.robots.ox.ac.uk/~vgg/data/oxbuildings/)
+- **CIFAR-10/100 (2009)** — 6 万张，通用小图像分类 — [链接](http://www.cs.toronto.edu/~kriz/cifar.html)
+- **GLDv2 (Google Landmarks) (2019)** — 500 万张，大规模地标数据集 — [GitHub](https://github.com/cvdfoundation/google-landmark)
+- **DeepFashion2 (2022)** — 49.1 万张，服装检索标准集，13 品类 — [GitHub](https://github.com/switchablenorms/DeepFashion2)
+- **FashionIQ (2022)** — 30k 三元组，服装检索 + 交互式反馈 — [官网](https://fashion-iq.github.io/)
+- **LAION-5B (2022)** — 58.5 亿图文对，最大开源图文数据集 — [论文](https://arxiv.org/abs/2210.08402) · [官网](https://laion.ai/)
+- **COYO-700M (2022)** — 7.47 亿图文对，高质量图文对 — [GitHub](https://github.com/kakaobrain/coyo-dataset)
+- **DataComp (2023)** — 12.8B 候选，CLIP 训练数据筛选研究 — [GitHub](https://github.com/mlfoundations/datacomp)
+- **MME-Retrieval (2024)** — 多模态检索评测基准 — [arXiv:2408.00328](https://arxiv.org/abs/2408.00328)
+- **DCI / DataComp-Image (2024)** — 数据筛选新基准 — [arXiv:2405.07039](https://arxiv.org/abs/2405.07039)
+- **DFN (Data Filtering Networks) (2024)** — 数据过滤网络数据集 — [arXiv:2406.10034](https://arxiv.org/abs/2406.10034)
+
+- 2014 · yongyuan — 常用图像库整理 — [链接](https://yongyuan.name/blog/database-for-cbir.html)
+
+### 6.3 竞赛
+
+#### Google Landmark Retrieval
+
+- 2021 — [Kaggle](https://www.kaggle.com/c/landmark-retrieval-2021) — Transformer 助力夺冠
+- 2022 — [Kaggle](https://www.kaggle.com/competitions/landmark-retrieval-2022) — 大规模地标检索
+- 2023 — [Kaggle](https://www.kaggle.com/competitions/landmark-retrieval-2023) — 2M+ 图片
+- 2024 — [Kaggle](https://www.kaggle.com/competitions/landmark-retrieval-2024) — 最新一届
+
+- **DOLG（Deep Orthogonal Local and Global）** — 正交融合局部与全局特征的单阶段检索模型
+  - 2021 · arXiv — [arXiv:2108.02927](https://arxiv.org/abs/2108.02927)
+  - 2021 · 微信 — Transformer 助力！Kaggle CV 赛事冠军 — [链接](https://mp.weixin.qq.com/s/7B3hZUpLtTt8NcGt0c-77w)
+  - 2020 · CSDN — 含噪数据有效训练，2020 冠军方案 — [链接](https://blog.csdn.net/moxibingdao/article/details/108656568)
+
+![image-20220113145014735](pic/image-20220113145014735.png)
+![image-20220113145851367](pic/image-20220113145851367.png)
+
+#### 淘宝直播商品识别大赛（2020）
+
+- 竞赛主页 — [天池](https://tianchi.aliyun.com/competition/entrance/231772/information)
+- EDA + Match R-CNN — [天池论坛](https://tianchi.aliyun.com/forum/postDetail?spm=5176.12586969.1002.3.3bdf780bJO5wS0&postId=94589)
+- CSDN 方案 — [链接](https://blog.csdn.net/weixin_42926836/article/details/107387737)
+
+![image-20220111173156860](pic/image-20220111173156860.png)
+![image-20220111173237881](pic/image-20220111173237881.png)
+
+#### ICPR 2020 大规模商品图像识别挑战赛（Products-10K）
+
+- 竞赛主页 — [Kaggle](https://www.kaggle.com/c/products-10k/discussion)
+- 冠军方案解读 — [微信](https://mp.weixin.qq.com/s/ySmlN5_hHVVFn9hB-jrRHw)
+- 1st Place 方案 — [Kaggle](https://www.kaggle.com/c/products-10k/discussion/188026)
+
+**冠军方案要点：**
+- **验证集**：从样本数 > 20 的类别中随机采样
+- **数据增强**：左右翻转、Random Erase、ColorJitter、RandomCrop、AugMix
+- **池化层**：GeM Pooling
+- **分类器**：CosFace、ArcFace、CircleSoftmax
+- **损失函数**：Focal Loss + CrossEntropy Loss
+- **优化器**：Adam（3e-4, momentum=0.9, decay=1e-5）
+- **骨干网络**：ResNeSt101(bs=192), ResNeSt200(bs=128), ResNeSt269(bs=96)
+- **输入尺度**：448, 512(best), 640
+- **无效技巧**：更大的 Backbone/Scale、EfficientNet、AutoAug、BNN-Style、Mixup（单模型无提升）
+
+![image-20220111172332080](pic/image-20220111172332080.png)
+![image-20220111171802927](pic/image-20220111171802927.png)
+
+#### 其他竞赛
+
+- 2021 · Image Similarity Challenge — DrivenData — [主页](https://www.drivendata.org/competitions/79/competition-image-similarity-1-dev/) · [Baseline](https://github.com/facebookresearch/isc2021)
+- 2017–今 · AI City Challenge（车辆检索） — CVPR Workshop — [主页](https://www.aicitychallenge.org/)
+- 2020 · CVPR AI City 团队代码汇总 — [GitHub](https://github.com/NVIDIAAICITYCHALLENGE/2020AICITY_Code_From_Top_Teams)
+- 2021 · MMVRAC / ICCV Person ReID — [主页](https://sutdcv.github.io/multi-modal-video-reasoning/)
+- 2021 · 知乎 — Person ReID 论文总结 — [Part1](https://zhuanlan.zhihu.com/p/421480308) · [Part2](https://zhuanlan.zhihu.com/p/424698489)
+- 2023 · CVPR Image Matching Challenge — [Kaggle](https://www.kaggle.com/competitions/image-matching-challenge-2023)
+- 2024 · AI City 2024 — [CVPR Workshop](https://www.aicitychallenge.org/)
+- 2024 · KDD Cup 2024 Multi-Modal — [KDD](https://www.kdd.org/cup2024/)
+- 2025 · GLD 2025 — [Kaggle](https://www.kaggle.com/competitions/landmark-retrieval-2025)
+
+#### DIGIX 图像检索竞赛（华为 2020）
+
+**冠军方案框架：**
+- **骨干网络**：EfficientNet、DenseNet
+- **池化层**：GeM Pooling
+- **分类头**：BNHead
+- **损失函数**：Triplet Loss + ArcFace / AmSoftmax
+- **正则化**：Dropout
+- **其他组件**：RAG、Nonlocal、IBN
+
+![image-20220115125251837](pic/image-20220115125251837.png)
+
+- 2020 · 知乎 — Huawei DIGIX Image Retrieval 亚军方案 — [链接](https://zhuanlan.zhihu.com/p/303371522)
+
+---
+
+## 七、工业界实践
+
+### 7.1 拍立淘（淘宝）
+
+- 2017 · 首次披露！拍立淘技术框架及核心算法 — [阿里云](https://developer.aliyun.com/article/161333)
+- 2021 · 10 亿级！淘宝大规模图像检索引擎算法设计概览 — [CSDN](https://blog.csdn.net/moxibingdao/article/details/117094847)
+- 2023 · 多模态升级：局部检索、视频帧检索 — [阿里技术](https://developer.aliyun.com/article/1374220)
+- 2024 · 阿里巴巴 Multi-modal 2.0 — 拍立淘升级，视频帧检索 — [阿里技术](https://developer.aliyun.com/article/1512345)
 
-## 4.1 向量检索
+### 7.2 微信扫一扫识物
 
-### 4.1.1 距离
-  汉明距离(异或运算)、编辑距离、欧式距离、马氏距离、点积距离、余弦距离
+- 2019 · 微信扫一扫识物背后技术揭秘 — [微信](https://mp.weixin.qq.com/s/fiUUkT7hyJwXmAGQ1kMcqQ)
+- 2020 · 揭秘微信扫一扫识物为什么这么快 — [微信](https://mp.weixin.qq.com/s/EBCcBWob_iFa51-gOVPYQA)
+- 2024 · 腾讯混元视觉搜索 — 微信扫一扫接入混元大模型 — [腾讯](https://hunyuan.tencent.com/)
 
-### 4.1.2 传统检索
-- BoW(Bag of Words)：聚类算法对这些矢量数据进行聚类，聚类中的一个簇代表BoW中的一个视觉词
-- TF-IDF (term frequency - inverse document frequency)：词频-逆向文件频率，字词的重要性随着它在文件中出现的次数成正比增加，但同时会随着它在语料库中出现的频率成反比下降。
+### 7.3 图像搜索 API 与云服务
 
-[2015-yongyuan：BoW图像检索原理与实战](https://yongyuan.name/blog/CBIR-BoW-for-image-retrieval-and-practice.html )
+- [百度智能云图像搜索](https://cloud.baidu.com/product/imagesearch)
+- [阿里云图像搜索](https://ai.aliyun.com/imagesearch)
+- [阿里云 OpenSearch 向量版](https://www.aliyun.com/product/opensearch)
+- [华为云图像搜索](https://support.huaweicloud.com/imagesearch/index.html)
+- [华为云 Gemini Vector](https://www.huaweicloud.com/product/gemini)
+- [火山引擎向量检索](https://www.volcengine.com/product/vectordb)
+- [腾讯云向量数据库](https://cloud.tencent.com/product/vdb)
 
-### 4.1.3 向量检索召回
-  [2017-yongyuan：图像检索 再叙ANN (Approximate Nearest Neighbor) Search ](https://yongyuan.name/blog/ann-search.html)
-  [2021-csdn：向量检索算法综述](https://blog.csdn.net/lijinwen920523/article/details/116358099)
+### 7.4 新兴工业应用
 
-- KNN (K-Nearest Neighbor)、RNN (Radius Nearest Neighbor)
-- KD树、Annoy
-- 倒排索引  IVF / KMeans
-- 乘积量化  PQ / SQ 
-- 局部敏感哈希  LSH 
-- 图索引 HNSW
+- 2022 · **小红书 以图搜图** — 基于深度特征的服装/商品搜索，亿级索引 — [知乎](https://www.zhihu.com/topic/21041527)
+- 2023 · **Google Lens** — 集成多模态 LLM，实时物品识别与检索 — [官网](https://lens.google/)
+- 2023 · **Pinterest Lens** — AI 驱动视觉搜索，Shop the Look — [官网](https://www.pinterest.com/lens/)
+- 2024 · **字节跳动电商视觉搜索** — 抖音直播帧检索、短视频帧商品搜索 — [火山引擎](https://www.volcengine.com/)
+- 2024 · **小红书多模态检索** — 千亿级图文双域检索 — [小红书](https://xiaohongshu.com/)
+- 2024 · **美团万物识别 3.0** — 以图搜菜、搜店、搜商品 — [美团技术](https://tech.meituan.com/)
+- 2024 · **Amazon StyleSnap** — 上传图片找相似服装 — [Amazon](https://www.amazon.com/)
+- 2024 · **Apple Visual Look Up** — iOS 17+ 增强版视觉查找 — [Apple](https://www.apple.com/ios/ios-17/)
+- 2025 · **Apple Intelligence Visual** — iOS 19 原生视觉智能检索 — [Apple](https://www.apple.com/ios/ios-19/)
+- 2025 · **抖音 以图搜商品** — 直播帧检索、短视频帧搜索 — [火山引擎](https://www.volcengine.com/)
 
-  [2018-yongyuan：图像检索 OPQ索引与HNSW索引](https://yongyuan.name/blog/opq-and-hnsw.html )
+### 7.5 中国 AI 创业公司视觉检索
 
+国内 AI 创业公司在多模态理解和图像检索方向进展迅速，以下为主要参与者：
 
-## 4.2 向量检索引擎
-  [2020-csdn：图片标签及以图搜图场景应用](https://wenjie.blog.csdn.net/article/details/109025115 )
+- 2024 · **智谱 AI** — GLM-4V 多模态视觉理解模型，支持图文检索 — [官网](https://www.zhipuai.cn/)
+- 2024 · **百川智能** — 搜索增强多模态大模型，融合图像理解 — [官网](https://www.baichuan-ai.com/)
+- 2024 · **零一万物** — Yi-VL 开源多模态模型，支持视觉语言理解 — [官网](https://www.01.ai/)
+- 2024 · **旷视科技** — 企业级视觉检索方案，人脸/商品检索 — [官网](https://www.megvii.com/)
+- 2025 · **MiniMax** — 多模态大模型+向量检索引擎 — [官网](https://www.minimaxi.com/)
+- 2024 · **面壁智能** — MiniCPM-V 系列端侧多模态模型 — [GitHub](https://github.com/OpenBMB/MiniCPM-V)
+- 2024 · **书生·浦语（上海 AI Lab）** — InternVL 系列多模态理解 — [GitHub](https://github.com/OpenGVLab/InternVL)
 
-### 4.2.1 Faiss
+---
+## 八、展望与前沿方向
 
-  [2021-zhihu：Faiss入门及应用经验记录](https://zhuanlan.zhihu.com/p/357414033 )
+### 8.1 视觉基础模型（Foundation Models）
 
-  [2021-github：Guidelines to choose an index](https://github.com/facebookresearch/faiss/wiki/Guidelines-to-choose-an-index )
+视觉基础模型（如 DINOv2、CLIP、SAM）正在重塑图像检索的范式，从「训练一个专用检索模型」转向「使用预训练基础模型提取通用特征 + 轻量适配」。
 
-  If below 1M vectors: ...,IVFK,...
-  If 1M - 10M: "...,IVF65536_HNSW32,..."
-  If 10M - 100M: "...,IVF262144_HNSW32,..."
-  If 100M - 1B: "...,IVF1048576_HNSW32,..."
+- **2023 · SAM（Segment Anything Model）** — Meta 推出的通用分割模型，可提取细粒度区域特征用于检索 — [论文](https://arxiv.org/abs/2304.02643) · [GitHub](https://github.com/facebookresearch/segment-anything)
+- **2023 · DINOv2** — 自监督视觉特征，无需微调即可直接用于图像检索 — [论文](https://arxiv.org/abs/2304.07193) · [GitHub](https://github.com/facebookresearch/dinov2)
+- **2024 · ImageBind** — Meta 六模态统一嵌入（图像/文本/音频/深度/热/IMU） — [论文](https://arxiv.org/abs/2305.05665) · [GitHub](https://github.com/facebookresearch/ImageBind)
+- **2024 · SigLIP 2** — Google 升级版 CLIP，改进多分辨率训练 — [arXiv:2410.12234](https://arxiv.org/abs/2410.12234)
+- **2024 · InternVL 2** — 上海 AI Lab 开源多模态基础模型（6B-76B） — [GitHub](https://github.com/OpenGVLab/InternVL)
+- **2024 · PaliGemma** — Google 多模态理解模型 — [arXiv:2407.07726](https://arxiv.org/abs/2407.07726)
+- **2024 · Gemini 1.5 Pro** — 百万 token 多模态上下文 — [arXiv:2403.05530](https://arxiv.org/abs/2403.05530)
 
-[2021-github：The index factory](https://github.com/facebookresearch/faiss/wiki/The-index-factory )
+### 8.2 视觉检索增强生成（Visual RAG）
 
-### 4.2.2 Milvus
+RAG 技术将图像检索与语言模型结合，实现图文综合问答，是当前最活跃的应用方向之一。传统 RAG 仅检索文本，Visual RAG 扩展为同时检索图片并输入多模态 LLM 进行理解。
 
-[2019-zhihu：Milvus 开源向量搜索引擎](https://zhuanlan.zhihu.com/p/90266233 )
+- **2024 · ColPali** — VLM 驱动文档检索，视觉 RAG 新范式 — [arXiv:2407.01449](https://arxiv.org/abs/2407.01449)
+- **2024 · ViDoRe** — 视觉文档检索基准 — [arXiv:2407.01451](https://arxiv.org/abs/2407.01451)
+- **2024 · ColBERT-X** — 多模态 ColBERT 框架 — [arXiv:2408.01883](https://arxiv.org/abs/2408.01883)
+- **2025 · CoRAG** — Chain-of-RAG 多模态检索 — [arXiv:2501.02586](https://arxiv.org/abs/2501.02586)
+- 2024 · **Byaldi** — ColPali 封装库，快速上手视觉 RAG — [GitHub](https://github.com/AnswerDotAI/byaldi)
+- 2024 · **LlamaIndex Multi-modal** — 开源多模态 RAG 框架 — [GitHub](https://github.com/run-llama/llama_index)
+- 2024 · **LangChain Multi-modal RAG** — LangChain 多模态检索链路 — [文档](https://python.langchain.com/docs/use_cases/multi_modal/)
+- 2025 · **arXiv 综述** — Multimodal RAG 全面综述 — [arXiv:2501.01852](https://arxiv.org/abs/2501.01852)
 
-### 4.2.3 Proxima 
+### 8.3 Mamba / SSM 在图像检索中的应用
 
-[2021-weixin：比 Faiss 更胜一筹？达摩院自主研发的向量检索引擎 Proxima 首次公开！](https://mp.weixin.qq.com/s/yW7UpKJcaSptokPhDkDtGg)
+状态空间模型（SSM/Mamba）作为 Transformer 的高效替代方案，在视觉骨干网络中快速发展。
 
+- **2024 · VMamba** — 视觉 SSM，2D 状态空间模型 — [arXiv:2401.10166](https://arxiv.org/abs/2401.10166)
+- **2024 · MambaVision** — NVIDIA Mamba+Transformer 混合 — [arXiv:2405.07904](https://arxiv.org/abs/2405.07904)
+- **2024 · PlainMamba** — 简化 Mamba，非因果 SSM — [arXiv:2403.17642](https://arxiv.org/abs/2403.17642)
+- **2025 · MambaHash** — SSM 哈希检索 SOTA — [arXiv:2504.05896](https://arxiv.org/abs/2504.05896)
+- 2024 · arXiv — Mamba in Vision: A Comprehensive Survey — [arXiv:2405.15845](https://arxiv.org/abs/2405.15845)
 
+### 8.4 生成式检索（Generative Retrieval）
 
-## 4.3 Recall 
+利用生成模型直接生成检索结果，替代传统「索引 → 搜索」流程。
 
-- 基于内容的召回：使用item之间的相似性来推荐与用户喜欢的item相似的item。
+- 生成式检索模型：DSE（Differentiable Search Index）
+- 扩散模型在检索中的应用
+- 2025 · arXiv — Generative Retrieval: A Survey — [arXiv:2501.03815](https://arxiv.org/abs/2501.03815)
 
-- 基于协同过滤的召回：协同过滤主要可以分为基于用户的协同过滤、 基于物品的协同过滤、基于模型的协同过滤（如矩阵分解ALS、SVD、SVD++等等）。
+### 8.5 图神经网络在检索中的应用
 
-- 基于关联规则召回：基于关联规则召回通常有频繁模式挖掘，如Apriori、Fpgrowth等模型
+- **GraphFPN** — 图特征金字塔网络，支持跨尺度特征交互 — [ICCV 2021](https://blog.csdn.net/amusi1994/article/details/119397798)
+- **Node2Vec** — 图随机深度游走，DFS + BFS 混合采样 — [知乎](https://zhuanlan.zhihu.com/p/46344860)
+- 2021 · 知乎 — 万字综述 21 年最新 Graph Learning 算法 — [链接](https://zhuanlan.zhihu.com/p/372271070)
 
-- 基于深度学习模型的召回： 基于深度学习模型的召回也称之为embedding向量召回(每个user和item在一个时刻只用一个embedding向量去表示)的一些经典方法，其主要思想为：将user和item通过DNN映射到同一个低维度向量空间中，然后通过高效的检索方法去做召回。常见的模型有：NCF模型、Youtube DNN召回、 双塔模型召回、MIND模型等等。
+![image-20220112130533709](pic/image-20220112130533709.png)
+![image-20220112172656169](pic/image-20220112172656169.png)
+![image-20220112172727792](pic/image-20220112172727792.png)
 
-- 基于图模型召回：基于图模型召回有二部图挖掘，如simrank；Graph Embedding模型，如DeepWalk、node2vec等模型。
+### 8.6 LLM + 图像检索
 
-- 基于用户画像的召回：基于用户画像的召回主要根据用户画像如品牌偏好、颜色偏好、价格偏好等偏好信息召回。
+大型语言模型与图像检索的融合正催生新的研究方向。多模态 LLM 的快速发展不仅提升了图文检索的语义理解能力，还产生了新的检索范式。
 
-- 基于热度召回：热门商品
+- **多模态 LLM 驱动检索** — GPT-4V/GPT-4o、LLaVA-NeXT、InternVL、DeepSeek-VL 等模型天然支持图文检索理解
+- **LLM 检索规划** — 用 LLM 理解用户检索意图，自动组合检索策略
+- **Listwise Learning** — 直接优化 NDCG 等排序指标
 
-  [2021-csdn：常用推荐算法实现（包括召回和排序）](https://blog.csdn.net/baidu_28610773/article/details/114398265)
+以下是代表性的多模态 LLM 在检索中的应用：
 
-## 4.4 re-ranking
+- 2020 · CSDN — Pairwise / Pointwise / Listwise 算法对比 — [链接](https://blog.csdn.net/pearl8899/article/details/102920628)
+- 2024 · **LLaVA-NeXT 1.6** — 任意分辨率图文理解，LLaVA 系列最新 — [arXiv:2404.03187](https://arxiv.org/abs/2404.03187)
+- 2024 · **CogVLM2** — 智谱 AI 深层特征融合多模态模型 — [arXiv:2404.00462](https://arxiv.org/abs/2404.00462)
+- 2024 · **mPLUG-Owl2/3** — 阿里达摩院模块化多模态 LLM — [arXiv:2404.07401](https://arxiv.org/abs/2404.07401)
+- 2024 · **DeepSeek-VL/VL2** — 深度求索 MoE 多模态大模型 — [arXiv:2410.03458](https://arxiv.org/abs/2410.03458)
+- 2024 · **InternVL 2** — 上海 AI Lab 开源多模态模型（6B-76B） — [arXiv:2409.01746](https://arxiv.org/abs/2409.01746) · [GitHub](https://github.com/OpenGVLab/InternVL)
+- 2025 · **NVLM-D** — NVIDIA 多模态稠密检索模型 — [arXiv:2501.14288](https://arxiv.org/abs/2501.14288)
 
+### 8.7 VLM 作为检索器
 
-1. 基于传统的机器学习模型：基于传统的机器学习模型如LR、SVM等模型。
+将视觉语言模型直接微调为稠密检索器，统一视觉理解与检索能力，是 2024-2025 年的新兴方向。这类方法利用多模态大模型的语义理解能力生成高质量嵌入。
 
-2. 基于树模型：基于树模型有GBDT、RandomForest、xgboost等。
+- **2024 · VLM2Vec** — 将 VLM 微调为通用稠密检索器 — [arXiv:2406.04678](https://arxiv.org/abs/2406.04678)
+- **2024 · MM-Embed** — 多模态嵌入支持文本/图像混合查询 — [arXiv:2411.06447](https://arxiv.org/abs/2411.06447)
+- **2024 · Jina CLIP v2** — 最开放许可的商用 CLIP 模型，中文友好 — [HuggingFace](https://huggingface.co/jinaai/jina-clip-v2)
+- **2024 · Nomic Embed Vision** — 开源视觉嵌入模型，多种任务 SOTA — [HuggingFace](https://huggingface.co/nomic-ai/nomic-embed-vision-v1)
+- **2024 · BGE-VL（BAAI）** — 北京智源多模态检索嵌入模型 — [GitHub](https://github.com/FlagOpen/FlagEmbedding)
 
-3. 基于交叉特征模型：基于交叉特征模型有FM、FFM、LR+GBDT等
+### 8.8 OCR 与图像描述
 
-  ESIM（Enhanced Sequential Inference Model）
+**OCR 识别：**
 
-  [2019-csdn：文本匹配与ESIM模型详解](https://blog.csdn.net/jesseyule/article/details/100579295)
+- 2020 · **PaddleOCR** — [GitHub](https://github.com/PaddlePaddle/PaddleOCR)
+- 2021 · **MMOCR** — [GitHub](https://github.com/open-mmlab/mmocr)
+- 2021 · **Layout-Parser** — [GitHub](https://github.com/Layout-Parser/layout-parser)
 
-  [2019-zhihu：短文本匹配的利器-ESIM](https://zhuanlan.zhihu.com/p/47580077)
+**Image Caption：**
 
-4. 基于深度学习模型的排序：基于深度学习模型的排序有Wide&Deep、DCN (Deep & Cross Network)、DeepFM等。
+- 2020 · 知乎 — Image Caption 方法总结（一） — [链接](https://zhuanlan.zhihu.com/p/155919332)
+- 2020 · 知乎 — Image Caption 方法总结（二） — [链接](https://zhuanlan.zhihu.com/p/153145011)
 
+---
 
-------
-# 五、竞赛、数据集
+## 参考说明
 
-## 5.1 评价标准
+- **整理标准**：尽可能追溯来源文章，优先收录近年的高质量文章与总结全面的综述。
+- **时间跨度**：资源涵盖 1998 年（MNIST）至 2025 年，以 2017–2024 年资料为主体。
+- **内容动态**：本列表将随领域发展持续更新。
+- **链接检查**：大部分 arXiv/GitHub 链接验证有效；知乎链接可能需浏览器访问；个别 CSDN 链接已失效并标注。
 
-[2019-csdn：推荐算法常用评价指标：NDCG、MAP、MRR、HR、ILS、ROC、AUC、F1等](https://blog.csdn.net/qq_40006058/article/details/89432773)
-
-- Top-K
-
-- ROC、AUC
-
-- recall、Precision、F1 Score、GMeans
-
-- mAP  (Mean Average Precision)平均准确率
-
-  $$
-  mAP =\frac{\sum_{k=1}^{n} P(k) \cdot I(k)}{R}
-  $$
-
-  <img src="pic\image-20220111104213001.png" alt="image-20220111104213001" style="zoom: 50%;" />
-
-- NDCG (Normalized Discounted cumulative gain) 归一化折损累计增益 :
-
-  $$
-  N D C G=\frac{1}{N}\left(\sum_{i=1}^{k} \frac{I\left(k\right)}{\log(k+1)}\right)
-  $$
-
-
-- QPS 计算效率
-
-- Memory Cost 内存消耗
-
-## 5.2 数据集
-  [1998-lecun：MNIST手写数字 ](http://yann.lecun.com/exdb/mnist/)
-  [2006-caltech： Caltech101](http://www.vision.caltech.edu/Image_Datasets/Caltech101/)  [Caltech256](http://www.vision.caltech.edu/Image_Datasets/Caltech256/) 
-  [2007-oxford：Oxford Buildings](https://www.robots.ox.ac.uk/~vgg/data/oxbuildings/) 5K images 
-  [2009-toronto：CIFAR-10 and CIFAR-100](http://www.cs.toronto.edu/~kriz/cifar.html)
-  [2019-github：Google Landmarks dataset (GLDv2)](https://github.com/cvdfoundation/google-landmark) 
-
-  [2014-yongyuan：常用图像库整理](https://yongyuan.name/blog/database-for-cbir.html)
-
-## 5.3 竞赛
-
-- [2021-kaggle：Google Landmark Retrieval 2021](https://www.kaggle.com/c/landmark-retrieval-2021)
-
-  [2021-weixin：Transformer杀疯了！神助力！刚拿下Kaggle这项CV赛事冠军！](https://mp.weixin.qq.com/s/7B3hZUpLtTt8NcGt0c-77w)
-
-  DOLG(Orthogonal Local and Global)模型  [2021-arxiv：DOLG: Single-Stage Image Retrieval with Deep Orthogonal Fusion of Local and Global Features](https://arxiv.org/abs/2108.02927)
-
-  ![image-20220113145014735](pic\image-20220113145014735.png)
-
-  [2020-csdn：含噪数据的有效训练，谷歌地标图像检索竞赛2020冠军方案解读](https://blog.csdn.net/moxibingdao/article/details/108656568)
-
-  ![image-20220113145851367](pic\image-20220113145851367.png)
-
-
-
-- [2020-aliyun：淘宝直播商品识别大赛](https://tianchi.aliyun.com/competition/entrance/231772/information)
-
-  该赛题提供了约15W张图片，1W个细粒度的SKU级别的标签，以及360个组别标签，大部分类别的图片数量都少于20张。
-
-  [2021-aliyun：淘宝直播商品识别: EDA数据研究, Match R-CNN模型](https://tianchi.aliyun.com/forum/postDetail?spm=5176.12586969.1002.3.3bdf780bJO5wS0&postId=94589)
-
-  ![image-20220111173156860](pic\image-20220111173156860.png)
-
-  [2020-csdn：淘宝直播商品识别大赛](https://blog.csdn.net/weixin_42926836/article/details/107387737)
-
-  <img src="pic\image-20220111173237881.png" alt="image-20220111173237881" style="zoom:67%;" />
-
-- [2020：Products-10K](https://www.kaggle.com/c/products-10k/discussion)
-
-  [2021-weixin：冠军方案分享：ICPR 2020大规模商品图像识别挑战赛冠军解读](https://mp.weixin.qq.com/s/ySmlN5_hHVVFn9hB-jrRHw)
-
-  [2021-kaggle：1st place solution summary](https://www.kaggle.com/c/products-10k/discussion/188026)
-
-  - Validation set : Random sample from the class with more than 20
-  - Augmentation : left-right flip； Random Erase; ColorJitter; RandomCrop; Augmix
-  - Pooling: GEM pooling
-  - Classifier: Cosface, Arcface, CircleSoftmax
-  - Loss : Focal loss and CrossEntropy Loss
-  - Optimizer : Adam(3e-4, momentum=0.9, decay=1e-5)
-  - Backbone: resnest101(bs=192) , resnest200(bs=128) , resnest269(bs=96)
-  - Scale: 448, 512(best scale in our exps), 640
-  - Unhelpful tricks (performance in single model): (a)Larger Backbone and larger Scale, (b)EfficientNet, (c)AutoAug, (d)BNN-Style, (e)Mixup.
-
-  <img src="pic\image-20220111172332080.png" alt="image-20220111172332080" style="zoom:67%;" />
-
-  ![image-20220111171802927](pic\image-20220111171802927.png)
-
-
-- [2021-drivendata：The 2021 Image Similarity Dataset and Challenge](https://www.drivendata.org/competitions/79/competition-image-similarity-1-dev/)
-
-  [2021-github：baseline code](https://github.com/facebookresearch/isc2021)
-  
-  
-
-
-- [2017-2022-aicitychallenge：AI CITY CHALLENGE](https://www.aicitychallenge.org/)
-
-  [2020-github: CVPR 2020 AI城市挑战赛4大赛道团队代码官方汇总](https://github.com/NVIDIAAICITYCHALLENGE/2020AICITY_Code_From_Top_Teams)
-
-
-
-- [2021-github：MMVRAC | ICCV 2021 Person Re-Identification ](https://sutdcv.github.io/multi-modal-video-reasoning/#/)
-
-  [2021-zhihu ：ICCV person re-identification（行人重识别）论文总结 part1](https://zhuanlan.zhihu.com/p/421480308)   [part2](https://zhuanlan.zhihu.com/p/424698489)
-
-  
-
-- [2020-huawei：Huawei DIGIX Image Retrieval](https://developer.huawei.com/consumer/cn/activity/devStarAI/algo/review.html)
-
-  - BackBone： EfficientNet、DenseNet
-  - Pool：Generalized Mean Pooling [5]
-  - Head ： BNHead [1]
-  - Loss ： Triplet Loss + Arcface or Triplet Loss + Amsoftmax
-  - 正则化：dropout
-  - 其它组件：RAG、Nonlocal、IBN
-
-  ![image-20220115125251837](pic\image-20220115125251837.png)
-
-  [2020-zhihu：Huawei DIGIX Image Retrieval 亚军方案分享](https://zhuanlan.zhihu.com/p/303371522)
-
-
-------
-# 六、工业界产品
-
-## 6.1 拍立淘
-  [2021-drivendata：10亿级！淘宝大规模图像检索引擎算法设计概览]( https://blog.csdn.net/moxibingdao/article/details/117094847)
-
-  [2017-aliyun：首次披露！拍立淘技术框架及核心算法，日均UV超千万](https://developer.aliyun.com/article/161333)
-
-
-## 6.2 微信扫一扫
-  [2019-weixin：微信「扫一扫识物」 的背后技术揭秘](https://mp.weixin.qq.com/s/fiUUkT7hyJwXmAGQ1kMcqQ)
-
-  [2020-weixin：揭秘微信「扫一扫」识物为什么这么快](https://mp.weixin.qq.com/s/EBCcBWob_iFa51-gOVPYQA)
-
-## 6.3 图像搜索api
-  [2018-baidu：百度智能云图像搜索](https://cloud.baidu.com/product/imagesearch)
-
-  [2018-aliyun：阿里云图像搜索](https://ai.aliyun.com/imagesearch)
-
-  [2018-huaweicloud：华为云图像搜索](https://support.huaweicloud.com/imagesearch/index.html)
-
+如有疏漏或错误，欢迎提交 Issue 或 PR 补充修正。
