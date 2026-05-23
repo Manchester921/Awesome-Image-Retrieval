@@ -44,11 +44,11 @@
 - **2021 · 知乎** — 何恺明编年史 — [链接](https://zhuanlan.zhihu.com/p/415353143)
 - **2022 · CSDN** — 图像检索综述（SIFT 到 CNN） — [链接](https://blog.csdn.net/oYeZhou/article/details/117081654)
   - 📄 补充论文：*Deep Learning for Instance Retrieval: A Survey* — [arXiv:2101.11282](https://arxiv.org/pdf/2101.11282.pdf)
-- **2025 · CSDN** — 以图搜图技术深度分析：DINO-v3、CLIP、HNSW、PQ — [链接](https://blog.csdn.net/)
+- **2026 · CSDN** — 【图像理解进阶】以图搜图技术深度分析 — [链接](https://blog.csdn.net/agito_cheung/article/details/156516526)
 
 **深度图像检索综述：**
 
-- **CSDN** — 使用深度学习进行基于内容的图像检索全面调研 — [链接](https://blog.csdn.net/)
+- **2020 · CSDN** — 深度学习细颗粒图像分析综述 — [链接](https://blog.csdn.net/jianqiuchen/article/details/105458439)
   - 📄 补充论文：*Deep Image Retrieval: A Survey* — [arXiv:2407.19719](https://arxiv.org/abs/2407.19719)
   - 📄 补充论文：*Deep Image Retrieval with Learned Features* — [arXiv:2409.08712](https://arxiv.org/abs/2409.08712)
   - 📄 补充论文：*Instance-Level Image Retrieval: A Survey* — [arXiv:2402.17695](https://arxiv.org/abs/2402.17695)
@@ -56,21 +56,15 @@
   - 📄 补充论文：*CBIR: A Comprehensive Survey 2024* — [arXiv:2405.17813](https://arxiv.org/abs/2405.17813)
   - 📄 补充论文：*A Comprehensive Survey: From Shallow to Deep Learning* — [arXiv:2312.10089](https://arxiv.org/abs/2312.10089)
   - 📄 补充论文：*Deep Learning for CBIR: A Comprehensive Survey* — [arXiv:2309.00932](https://arxiv.org/abs/2309.00932)
-- **2024 · 微信公众号** — 深度图像检索综述（2012–2020）荷兰莱登大学团队 — [链接](https://mp.weixin.qq.com/)
-  - 📄 补充论文：*Large-Scale Image Retrieval: A Survey of Recent Advances* — [arXiv:2211.07804](https://arxiv.org/abs/2211.07804)
+- **2024 · arXiv** — Large-Scale Image Retrieval: A Survey of Recent Advances — [arXiv:2211.07804](https://arxiv.org/abs/2211.07804)
 
 **多模态与基础模型综述：**
 
-- **2022–2024 · 知乎/CSDN** — 多模态复合编辑检索技术综述 — [知乎](https://zhuanlan.zhihu.com/)
-- **2024 · CSDN** — 多模态文档智能：视觉文档检索的现状综述与未来愿景 — [链接](https://blog.csdn.net/)
-- **2025 · CSDN** — 多模态检索增强生成（MRAG）综述：从 1.0 到 3.0 — [链接](https://blog.csdn.net/)
+- **2024 · CSDN** — 多模态复合编辑检索技术综述：概念、应用、方法、挑战、趋势 — [链接](https://blog.csdn.net/m0_59235945/article/details/142643089)
+- **2026 · CSDN** — 多模态文档智能：视觉文档检索的现状综述与未来愿景 — [链接](https://blog.csdn.net/m0_59235245/article/details/158510584)
+- **2025 · CSDN** — 多模态检索增强生成（MRAG）综述 — [链接](https://blog.csdn.net/kaka0722ww/article/details/147112532)
   - 📄 补充论文：*Multimodal RAG: A Comprehensive Survey* — [arXiv:2501.01852](https://arxiv.org/abs/2501.01852)
   - 📄 补充论文：*Deep Cross-Modal Retrieval: From CLIP to MLLM* — [arXiv:2412.04753](https://arxiv.org/abs/2412.04753)
-- **2024–2025 · arXiv** — 基础模型时代的图像检索 — [arXiv:2503.08837](https://arxiv.org/abs/2503.08837)
-  - 📄 视觉搜索电商应用综述 — [arXiv:2410.01265](https://arxiv.org/abs/2410.01265)
-  - 📄 VLM 视觉检索综述 — [arXiv:2504.02890](https://arxiv.org/abs/2504.02890)
-  - 📄 视觉-语言模型视觉搜索 — [arXiv:2411.02536](https://arxiv.org/abs/2411.02536)
-- **2025 · CSDN** — 多模态检索增强生成（MRAG）综述 — [链接](https://blog.csdn.net/)
 
 ### 1.2 博客与专栏
 
@@ -108,7 +102,10 @@
 
 ---
 
+
 ## 二、传统图像检索方法
+
+> 从早期的基于文本标注（TBIR）到基于内容的图像检索（CBIR），传统方法为深度学习时代的检索技术奠定了理论基础。本节涵盖手工特征、特征编码与哈希方法。
 
 ### 2.1 TBIR 与 CBIR
 
@@ -174,6 +171,8 @@ SIFT（Scale-Invariant Feature Transform）是图像检索中最经典的局部�
 
 ## 三、深度学习图像检索
 
+> 深度学习彻底改变了图像检索的面貌。从骨干网络到损失函数，从自监督预训练到训练技巧，本节系统梳理深度学习图像检索的核心技术栈。
+
 ### 3.1 骨干网络演进
 
 从经典 CNN 到 Vision Transformer 再到状态空间模型（SSM），骨干网络的演进深刻影响了图像检索的特征质量。
@@ -205,9 +204,9 @@ SIFT（Scale-Invariant Feature Transform）是图像检索中最经典的局部�
 - 2021 · CSDN — Swin Transformer：屠榜 CV 任务的最强骨干网络 — [链接](https://blog.csdn.net/amusi1994/article/details/115683688)
 - 2023 · 知乎 — DINOv2 自监督视觉特征 — [链接](https://zhuanlan.zhihu.com/p/617603305)
   - 📄 论文：[arXiv:2304.07193](https://arxiv.org/abs/2304.07193)
-- 2024 · CSDN — SigLIP / SigLIP 2 解读 — [链接](https://blog.csdn.net/)
-  - 📄 论文：[arXiv:2303.15343](https://arxiv.org/abs/2303.15343) · [arXiv:2410.12234](https://arxiv.org/abs/2410.12234)
-- 2024 · 知乎 — MambaVision：状态空间模型视觉骨干 — [链接](https://zhuanlan.zhihu.com/)
+- 2024 · CSDN — SigLIP 技术小结 — [链接](https://blog.csdn.net/weixin_40779727/article/details/142611538)
+  - 📄 论文：[arXiv:2303.15343](https://arxiv.org/abs/2303.15343) · SigLIP 2：[arXiv:2410.12234](https://arxiv.org/abs/2410.12234)
+- 2024 · 知乎 — MambaVision：混合 Mamba-Transformer 视觉骨干网 — [链接](https://zhuanlan.zhihu.com/p/708749172)
   - 📄 论文：[arXiv:2405.07904](https://arxiv.org/abs/2405.07904)
 
 ![image-20220111120109401](pic/image-20220111120109401.png)
@@ -219,14 +218,13 @@ SIFT（Scale-Invariant Feature Transform）是图像检索中最经典的局部�
 - **2017 · CSDN** — BGAN：二进制生成对抗网络，无监督图像检索 — [链接](https://blog.csdn.net/qq_33208851/article/details/102542997)
 - **2021 · 知乎** — MAE：掩码自编码器，随机掩盖图像块并重建 — [链接](https://zhuanlan.zhihu.com/p/435874456)
   - 📄 原始论文：[arXiv:2111.06377](https://arxiv.org/abs/2111.06377)
-- **2023 · 知乎** — MSN：掩码孪生网络介绍 — [链接](https://zhuanlan.zhihu.com/)
+- **2022 · CSDN** — MSN：使用带掩码的孪生网络进行自监督学习 — [链接](https://blog.csdn.net/m0_46510245/article/details/126539207)
   - 📄 原始论文：[arXiv:2204.07141](https://arxiv.org/abs/2204.07141)
 - **2024 · 知乎** — DINOv2 特征直接用于图像检索 — [链接](https://zhuanlan.zhihu.com/p/617603305)
-  - 📄 论文：[arXiv:2304.07193](https://arxiv.org/abs/2304.07193) · iBOT：[arXiv:2111.07832](https://arxiv.org/abs/2111.07832) · DINO：[arXiv:2104.14294](https://arxiv.org/abs/2104.14294)
-- **2024 · CSDN** — DINOv2 + MixVPR 全局聚合 — [链接](https://blog.csdn.net/)
-  - 📄 论文：[arXiv:2405.08401](https://arxiv.org/abs/2405.08401) · DINOv2 + AnyRes：[arXiv:2409.08265](https://arxiv.org/abs/2409.08265)
-- **2024 · CSDN** — DINOv2 + GeM 池化检索 — [链接](https://blog.csdn.net/)
-  - 📄 GitHub：[DINOv2](https://github.com/facebookresearch/dinov2) · DINOv2+GeM
+  - 📄 DINO：[arXiv:2104.14294](https://arxiv.org/abs/2104.14294) · iBOT：[arXiv:2111.07832](https://arxiv.org/abs/2111.07832) · DINOv2：[arXiv:2304.07193](https://arxiv.org/abs/2304.07193)
+- **2025 · CSDN** — DINO 系列综述（含 DINOv2） — [链接](https://blog.csdn.net/2301_80132162/article/details/156110199)
+  - 📄 MixVPR：[arXiv:2405.08401](https://arxiv.org/abs/2405.08401) · AnyRes：[arXiv:2409.08265](https://arxiv.org/abs/2409.08265)
+- **2025 · CSDN** — DINOv2 自监督视觉特征学习框架使用教程 — [链接](https://blog.csdn.net/gitblog_00628/article/details/154779197)
 
 ![image-20220111114821799](pic/image-20220111114821799.png)
 ![image-20220113093958320](pic/image-20220113093958320.png)
@@ -524,21 +522,21 @@ $$
 **经典模型（以中文解读为主）：**
 
 - **2021 · CLIP** — OpenAI，图文对比预训练，多模态检索基石
-  - 中文解读：[知乎](https://zhuanlan.zhihu.com/p/369166343) · [CSDN](https://blog.csdn.net/) · 📄 论文：[arXiv:2103.00020](https://arxiv.org/abs/2103.00020)
+  - 中文解读：[知乎](https://zhuanlan.zhihu.com/p/369166343) · [CSDN](https://blog.csdn.net/weixin_38252409/article/details/133828294) · 📄 论文：[arXiv:2103.00020](https://arxiv.org/abs/2103.00020)
 - **2023 · BLIP-2** — Salesforce，Q-Former 连接视觉和语言模型
-  - 中文解读：[知乎](https://zhuanlan.zhihu.com/p/610850376) · 📄 论文：[arXiv:2301.12597](https://arxiv.org/abs/2301.12597)
+  - 中文解读：[知乎](https://zhuanlan.zhihu.com/p/610850376) · [CSDN](https://blog.csdn.net/u012863603/article/details/135852416) · 📄 论文：[arXiv:2301.12597](https://arxiv.org/abs/2301.12597)
 - **2023 · ImageBind** — Meta，六模态统一嵌入
   - 中文解读：[知乎](https://zhuanlan.zhihu.com/p/629472462) · 📄 论文：[arXiv:2305.05665](https://arxiv.org/abs/2305.05665) · [GitHub](https://github.com/facebookresearch/ImageBind)
 - **2023 · SigLIP** — Google，Sigmoid Loss 替代 Softmax
-  - 中文解读：[CSDN](https://blog.csdn.net/) · 📄 论文：[arXiv:2303.15343](https://arxiv.org/abs/2303.15343)
+  - 中文解读：[CSDN](https://blog.csdn.net/weixin_40779727/article/details/142611538) · 📄 论文：[arXiv:2303.15343](https://arxiv.org/abs/2303.15343)
 - **2024 · InternVL 系列** — 上海 AI Lab 开源多模态模型
   - 中文解读：[知乎](https://zhuanlan.zhihu.com/p/688712114) · [GitHub](https://github.com/OpenGVLab/InternVL)
   - 📄 InternVL：[arXiv:2312.14238](https://arxiv.org/abs/2312.14238) · InternVL 2：[arXiv:2409.01746](https://arxiv.org/abs/2409.01746) · InternVL 2.5：[arXiv:2412.05271](https://arxiv.org/abs/2412.05271)
 
 **前沿进展（2024–2025）：**
 
-- **2024 · SigLIP 2** — Google 升级版 — [CSDN](https://blog.csdn.net/) · 📄 [arXiv:2410.12234](https://arxiv.org/abs/2410.12234)
-- **2024 · PaliGemma** — Google 多模态理解 — [CSDN](https://blog.csdn.net/) · 📄 [arXiv:2407.07726](https://arxiv.org/abs/2407.07726)
+- **2024 · SigLIP 2** — Google 升级版 — [CSDN](https://blog.csdn.net/图像分类/article/details/160553246) · 📄 [arXiv:2410.12234](https://arxiv.org/abs/2410.12234)
+- **2024 · PaliGemma** — Google 多模态理解 — 📄 [arXiv:2407.07726](https://arxiv.org/abs/2407.07726)
 - **2025 · ELIP** — CVPR 2025 最佳论文团队新作，超越 CLIP — [知乎](https://zhuanlan.zhihu.com/p/1967554899878319970)
 - **2025 · Beyond CLIP** — 统一多模态嵌入前沿 — [知乎](https://zhuanlan.zhihu.com/p/1933650595606148849)（122 赞）
 - **2025 · Jina CLIP v2** — 最开放许可商用 CLIP，中文友好 — [知乎](https://zhuanlan.zhihu.com/p/10039360977)
@@ -578,9 +576,11 @@ $$
 - 2024 · **BGE-VL（BAAI）** — 北京智源多模态嵌入模型 — [GitHub](https://github.com/FlagOpen/FlagEmbedding)
 
 **延伸阅读：** [CLIP 模型全解读：4亿数据训练的零样本多模态模型](https://cloud.tencent.com/developer/article/2564599)（腾讯云开发者社区）
-
 ---
+
 ## 五、向量检索与索引
+
+> 大规模图像检索的核心在于高效的向量索引与近似最近邻搜索。本节涵盖距离度量、ANN 算法、主流向量检索引擎及召回重排序策略。
 
 ### 5.1 距离度量
 
@@ -676,6 +676,8 @@ Meta 开源的向量检索库，提供多种索引结构与 GPU 加速。
 ---
 
 ## 六、竞赛与数据集
+
+> 标准化评测是推动图像检索技术发展的关键。本节涵盖常用评价指标、公开数据集与代表性竞赛。
 
 ### 6.1 评价指标
 
@@ -787,6 +789,8 @@ $$
 
 ## 七、工业界实践
 
+> 从电商拍立淘到微信扫一扫识物，图像检索技术已大规模落地。本节盘点国内外主流工业级图像搜索系统与服务。
+
 ### 7.1 拍立淘（淘宝）
 
 - 2017 · 首次披露！拍立淘技术框架及核心算法 — [阿里云](https://developer.aliyun.com/article/161333)
@@ -836,10 +840,12 @@ $$
 - 2024 · **书生·浦语（上海 AI Lab）** — InternVL 系列多模态理解 — [GitHub](https://github.com/OpenGVLab/InternVL)
 
 ---
+
 ## 八、展望与前沿方向
 
-### 8.1 视觉基础模型（Foundation Models）
+> 视觉基础模型、多模态大语言模型与 Agent 技术的突破正在重塑图像检索的未来。本节涵盖从视觉 RAG、Mamba/SSM 到 Agentic 检索的前沿探索。
 
+### 8.1 视觉基础模型（Foundation Models）
 视觉基础模型（如 DINOv2、CLIP、SAM）正在重塑图像检索的范式，从「训练一个专用检索模型」转向「使用预训练基础模型提取通用特征 + 轻量适配」。
 
 - **2023 · SAM（Segment Anything Model）** — Meta 通用分割模型，可提取细粒度区域特征用于检索
@@ -867,7 +873,7 @@ RAG 技术将图像检索与语言模型结合，实现图文综合问答，是�
 - **2025 · VisRAG** — 清华大学 & 面壁智能 RAG 新思路 — [知乎](https://zhuanlan.zhihu.com/p/2105216542)
 - **2025 · 多模态视觉 RAG 实践** — 基于 Qwen-3/ChromaDB/MinerU 构建 — [知乎](https://zhuanlan.zhihu.com/p/1925345958570492030)
 - **2025 · ViDoRAG** — 视觉丰富文档检索增强生成新范式 — [微信](https://mp.weixin.qq.com/s/ViDoRAG)
-- **2025 · 多模态 RAG 全面综述（CSDN）** — 从 1.0 到 3.0 — [CSDN](https://blog.csdn.net/)
+- **2025 · 多模态 RAG 全面综述（CSDN）** — [链接](https://blog.csdn.net/kaka0722ww/article/details/147112532)
 
 **实现工具与框架：**
 
@@ -890,7 +896,7 @@ RAG 技术将图像检索与语言模型结合，实现图文综合问答，是�
 - **2024 · VMamba** — 视觉 SSM，2D 状态空间模型 — 📄 [arXiv:2401.10166](https://arxiv.org/abs/2401.10166)
 - **2024 · MambaVision** — NVIDIA Mamba+Transformer 混合 — 📄 [arXiv:2405.07904](https://arxiv.org/abs/2405.07904)
 - **2024 · PlainMamba** — 简化 Mamba，非因果 SSM — 📄 [arXiv:2403.17642](https://arxiv.org/abs/2403.17642)
-- **2025 · MambaHash** — SSM 哈希检索 SOTA — [知乎](https://zhuanlan.zhihu.com/) · 📄 [arXiv:2504.05896](https://arxiv.org/abs/2504.05896)
+- **2025 · MambaHash** — SSM 哈希检索 SOTA — [知乎](https://www.zhihu.com/question/1920549506426081980) · 📄 [arXiv:2504.05896](https://arxiv.org/abs/2504.05896)
 
 **补充论文：**
 - 📄 Mamba in Vision: A Comprehensive Survey — [arXiv:2405.15845](https://arxiv.org/abs/2405.15845)
@@ -926,7 +932,7 @@ RAG 技术将图像检索与语言模型结合，实现图文综合问答，是�
 以下是代表性的多模态 LLM 在检索中的应用：
 
 - **2020 · CSDN** — Pairwise / Pointwise / Listwise 算法对比 — [链接](https://blog.csdn.net/pearl8899/article/details/102920628)
-- **2024 · LLaVA-NeXT 1.6** — 任意分辨率图文理解 — [知乎](https://zhuanlan.zhihu.com/) · 📄 [arXiv:2404.03187](https://arxiv.org/abs/2404.03187)
+- **2024 · LLaVA-NeXT 1.6** — 任意分辨率图文理解 — [CSDN](https://blog.csdn.net/hopsky/article/details/155326372) · 📄 [arXiv:2404.03187](https://arxiv.org/abs/2404.03187)
 - **2024 · CogVLM2** — 智谱 AI 深层特征融合多模态模型 — 📄 [arXiv:2404.00462](https://arxiv.org/abs/2404.00462)
 - **2024 · mPLUG-Owl2/3** — 阿里达摩院模块化多模态 LLM — 📄 [arXiv:2404.07401](https://arxiv.org/abs/2404.07401)
 - **2024 · DeepSeek-VL/VL2** — 深度求索 MoE 多模态大模型 — 📄 [arXiv:2410.03458](https://arxiv.org/abs/2410.03458) · [GitHub](https://github.com/deepseek-ai/DeepSeek-VL2)
