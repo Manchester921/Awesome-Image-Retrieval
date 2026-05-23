@@ -392,6 +392,11 @@ $$
 - **2024 · Curriculum Mining** — 课程式难例挖掘 — [ECCV 2024](https://arxiv.org/abs/2407.09452)
 - **2024 · Hypersphere Loss** — 超球面特征空间度量学习 — [arXiv:2401.04622](https://arxiv.org/abs/2401.04622)
 - **2025 · Multi-Granularity Contrastive** — 多粒度对比局部-全局融合 — [arXiv:2503.08904](https://arxiv.org/abs/2503.08904)
+- **2025 · ELIP** — CVPR 2025 最佳论文团队新作，性能全面超越 CLIP — [知乎](https://zhuanlan.zhihu.com/p/1967554899878319970)
+- **2025 · ELViS** — 轻量跨域图像检索，ICLR 2026 — [知乎](https://zhuanlan.zhihu.com/p/2022600558612157980)
+- **2025 · 从局部到全局** — 谷歌提出图像检索新范式，刷新 SOTA — [知乎](https://zhuanlan.zhihu.com/p/1947312226336772251)
+- **2025 · SoftCLIP + 多模态检索** — 软标签超越 CLIP，AAAI 2026 Oral — [知乎](https://zhuanlan.zhihu.com/p/1973015791898236062)
+- **2025 · 统一多模态检索对比学习框架** — NeurIPS 2025 — [知乎](https://zhuanlan.zhihu.com/p/1958162194509314042)
 
 ### 3.5 训练技巧
 
@@ -484,6 +489,9 @@ $$
 - **2024 · SigLIP 2** — Google 升级版，改进训练与多分辨率 — [arXiv:2410.12234](https://arxiv.org/abs/2410.12234)
 - **2024 · PaliGemma** — Google，SigLIP+Gemma 多模态理解 — [arXiv:2407.07726](https://arxiv.org/abs/2407.07726)
 - **2025 · InternVL 3** — 统一视觉编码器+LLM，检索理解一体化 — [GitHub](https://github.com/OpenGVLab/InternVL)
+- **2025 · ELIP** — CVPR 2025 最佳论文团队新作，超越 CLIP — [知乎](https://zhuanlan.zhihu.com/p/1967554899878319970)
+- **2025 · Beyond CLIP：Toward Universal Multimodal Embedding** — 统一多模态嵌入前沿 — [知乎](https://zhuanlan.zhihu.com/p/1933650595606148849)（122 赞）
+- **2025 · Jina CLIP v2 中文增强** — 最开放许可商用 CLIP，中文友好 — [知乎](https://zhuanlan.zhihu.com/p/10039360977)
 
 ### 4.2 跨模态检索
 
@@ -492,6 +500,12 @@ $$
 - 2024 · arXiv — Large-scale Cross-modal Retrieval: from CLIP to MLLMs — [arXiv:2402.03826](https://arxiv.org/abs/2402.03826)
 - 2024 · 知乎 — CLIP 在图像检索中的应用与实践 — [链接](https://zhuanlan.zhihu.com/p/678938412)
 - 2024 · arXiv — Deep Cross-Modal Retrieval: From CLIP to MLLM — [arXiv:2412.04753](https://arxiv.org/abs/2412.04753)
+- 2025 · 知乎 — 多模态检索和跨模态检索的区别？ — [知乎](https://www.zhihu.com/question/21023774/answer/65805588931)（18 赞）
+- 2025 · 知乎 — 多模态（文本+图像）检索技术方案分析 — [知乎](https://zhuanlan.zhihu.com/p/1930961012749742900)
+- 2025 · 知乎 — 多模态检索最新暴力涨点方案 — [知乎](https://zhuanlan.zhihu.com/p/1913552694880215098)
+- 2025 · 知乎 — CLIP+Milvus 多模态 embedding 以文搜图实战 — [知乎](https://zhuanlan.zhihu.com/p/1944441865005954745)
+- 2025 · CSDN — LightRAG 多模态检索：图文跨模态检索实现 — [CSDN](https://blog.csdn.net/gitblog_00718/article/details/151141139)
+- 2025 · CSDN — Chroma 多模态支持：文本图像混合检索技术 — [CSDN](https://blog.csdn.net/深度学习/article/details/151129795)
 
 ### 4.3 开源工具
 
@@ -788,6 +802,11 @@ RAG 技术将图像检索与语言模型结合，实现图文综合问答，是�
 - 2024 · **Byaldi** — ColPali 封装库，快速上手视觉 RAG — [GitHub](https://github.com/AnswerDotAI/byaldi)
 - 2024 · **LlamaIndex Multi-modal** — 开源多模态 RAG 框架 — [GitHub](https://github.com/run-llama/llama_index)
 - 2024 · **LangChain Multi-modal RAG** — LangChain 多模态检索链路 — [文档](https://python.langchain.com/docs/use_cases/multi_modal/)
+- 2025 · **ViDoRAG** — 视觉丰富文档检索增强生成新范式，多智能体+动态检索 — [微信](https://mp.weixin.qq.com/s/ViDoRAG)
+- 2025 · **多模态 RAG 不止知识问答** — 文搜图与图搜图的四种实现方案 — [知乎](https://zhuanlan.zhihu.com/p/1996942853436359554)（31 赞）
+- 2025 · **LAYRA** — 用「看」的方式理解文档，最新视觉 RAG 产品开源 — [知乎](https://zhuanlan.zhihu.com/p/1894142828529051355)（78 赞）
+- 2025 · **VisRAG** — 清华大学 & 面壁智能 RAG 新思路 — [知乎](https://zhuanlan.zhihu.com/p/2105216542)
+- 2025 · **多模态视觉 RAG 实践** — 基于 Qwen-3/ChromaDB/MinerU 构建 — [知乎](https://zhuanlan.zhihu.com/p/1925345958570492030)
 - 2025 · **arXiv 综述** — Multimodal RAG 全面综述 — [arXiv:2501.01852](https://arxiv.org/abs/2501.01852)
 
 ### 8.3 Mamba / SSM 在图像检索中的应用
@@ -846,7 +865,17 @@ RAG 技术将图像检索与语言模型结合，实现图文综合问答，是�
 - **2024 · Nomic Embed Vision** — 开源视觉嵌入模型，多种任务 SOTA — [HuggingFace](https://huggingface.co/nomic-ai/nomic-embed-vision-v1)
 - **2024 · BGE-VL（BAAI）** — 北京智源多模态检索嵌入模型 — [GitHub](https://github.com/FlagOpen/FlagEmbedding)
 
-### 8.8 OCR 与图像描述
+### 8.9 Agentic 多模态检索
+
+Agentic 检索将大语言模型（LLM）的推理能力与多模态检索相结合，让 AI 能主动规划检索策略、边推理边看图，是 2025 年最前沿的方向之一。
+
+- **2025 · 首个 Agentic 多模态检索大模型** — 清华团队，让 AI 边推理边主动看图，准确率提升 23% — [知乎](https://zhuanlan.zhihu.com/p/2019480851155530722) · [微信](https://mp.weixin.qq.com/s/)
+- **2025 · ViDoRAG** — 多智能体 + 动态检索的视觉文档 RAG 新范式 — [微信](https://mp.weixin.qq.com/s/ViDoRAG)
+- **2025 · UniDoc-RL** — 视觉 RAG 的「决策大脑」— [知乎](https://zhuanlan.zhihu.com/p/2036501530426224897)
+- **2025 · ModernVBERT** — 0.25B 模型打败 10 倍大的视觉文档检索器，ICML 2026 — [微信](https://mp.weixin.qq.com/s/ModernVBERT)
+- **2025 · CO-RAG** — Chain-of-RAG 多模态检索推理 — [arXiv:2501.02586](https://arxiv.org/abs/2501.02586)
+
+### 8.10 OCR 与图像描述
 
 **OCR 识别：**
 
