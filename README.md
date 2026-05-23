@@ -2,14 +2,11 @@
 
 ![image-20220113152559120](pic/image-20220113152559120.png)
 
-> 从传统方法到深度学习、多模态检索，系统梳理图像检索领域的经典资料与前沿进展。
-> 收录范围涵盖学术论文、开源项目、技术博客、竞赛方案与工业实践。
+> 从传统方法到深度学习，再到多模态检索，图像检索这个领域这些年变化挺大的。这篇文章整理了经典资料和最新进展，内容包括学术论文、开源项目、技术博客、竞赛方案和工业实践。
 >
-> **资料筛选准则**：尽可能追溯原始出处；优先收录较新且总结全面的文章。
+> **怎么挑的**：尽量追溯原始出处，优先选近两年总结全面的文章。
 >
-> **免责声明**：若有冒犯版权之处，请联系作者删除。
->
-> **转载**：请附链接 [Awesome-Image-Retrieval](https://github.com/Manchester921/Awesome-Image-Retrieval)
+> **转载**：请附原文链接 [Awesome-Image-Retrieval](https://github.com/Manchester921/Awesome-Image-Retrieval)
 
 ---
 
@@ -94,14 +91,23 @@
 ### 1.3 图书
 
 - 2021 · 深度学习图像搜索与识别 — [豆瓣](https://book.douban.com/subject/35430409/)
+- 2023 · 多模态大模型：技术原理与实战（彭勇等） — [豆瓣](https://book.douban.com/subject/36629663/)
+- 2023 · 基于内容的图像检索算法研究（李晓晴） — [豆瓣](https://book.douban.com/subject/36454156/)
+- 2024 · 从低层视觉到高层语义特征的图像检索技术 — [豆瓣](https://book.douban.com/subject/36896095/)
 
 ### 1.4 视频课程
 
 - 2020 · CSDN — 深度学习之以图搜图实战（PyTorch + Faiss） — [链接](https://edu.csdn.net/course/detail/31077)
 - 2021 · Bilibili — 深度学习图像搜索与识别 — [链接](https://www.bilibili.com/video/BV1XNIZ7mh)
+- 2023 · Bilibili — 【讲解】基于hu不变矩的图像检索 — [链接](https://www.bilibili.com/video/BV1Cu4y1q7Pk) — 唔皇万睡万万睡
+- 2024 · Bilibili — 基于CLIP模型的文本搜索图像的图像检索系统-毕业设计 — [链接](https://www.bilibili.com/video/BV1GEz2YREcj) — Plato-AI
+- 2024 · Bilibili — 多模态模型CLIP深度讲解 — [链接](https://www.bilibili.com/video/BV1pYmDYgEDW) — RethinkFun
+- 2024 · Bilibili — 以图搜图（反向图片搜索）开发与原理 — [链接](https://www.bilibili.com/video/BV1oi421m7mR) — SeeGoal666
+- 2025 · Bilibili — 撸一个功能强大的基于语义的图像检索系统 — [链接](https://www.bilibili.com/video/BV1CbsqzsErc) — Coding茶水间
+- 2025 · Bilibili — 【悟了！】 哈希算法与相似图像检索结合：图像处理的实用技巧 — [链接](https://www.bilibili.com/video/BV14PopYZE17) — 软妹不能玩单片机吗
+- 2025 · Bilibili — 从零学CLIP多模态模型，CLIP多模态模型详解 — [链接](https://www.bilibili.com/video/BV1p88mzAEPq) — 小黑黑讲AI
 
 ---
-
 
 ## 二、传统图像检索方法
 
@@ -961,15 +967,22 @@ Agentic 检索将大语言模型（LLM）的推理能力与多模态检索相结
 **补充论文：**
 - 📄 CO-RAG: Chain-of-RAG 多模态检索推理 — [arXiv:2501.02586](https://arxiv.org/abs/2501.02586)
 
-### 8.10 OCR 与图像描述
+### 8.10 OCR 与文档理解
 
-**OCR 识别：**
+OCR 技术已从「单纯的文字识别」走向「文档理解」——不仅识别文字，还做布局分析、阅读顺序、表格识别，输出 LLM 友好的结构化格式。
 
-- 2020 · **PaddleOCR** — [GitHub](https://github.com/PaddlePaddle/PaddleOCR)
-- 2021 · **MMOCR** — [GitHub](https://github.com/open-mmlab/mmocr)
-- 2021 · **Layout-Parser** — [GitHub](https://github.com/Layout-Parser/layout-parser)
+**OCR 识别工具：**
 
-**Image Caption：**
+- **PaddleOCR** — 百度出品，轻量级多语言 OCR，持续更新至 v3.5 — [GitHub](https://github.com/PaddlePaddle/PaddleOCR)
+- **Surya OCR** — 支持 90+ 语言的 OCR，含布局分析、阅读顺序、表格识别 — [GitHub](https://github.com/datalab-to/surya)
+- **marker-pdf** — 将 PDF 转换为 Markdown + JSON，高精度 — [GitHub](https://github.com/datalab-to/marker)
+- **MinerU** — 上海 AI Lab，将复杂文档转为 LLM 可用的 Markdown/JSON — [GitHub](https://github.com/opendatalab/MinerU)
+- **GOT-OCR 2.0** — 中科院自动化所，通用 OCR 理论端到端模型 — [GitHub](https://github.com/Ucas-HaoranWei/GOT-OCR2.0)
+- **mPLUG-DocOwl** — 阿里巴巴达摩院，多模态文档理解模型 — [GitHub](https://github.com/X-PLUG/mPLUG-DocOwl)
+- **Unstructured** — ETL 工具，复杂文档转结构化数据 — [GitHub](https://github.com/Unstructured-IO/unstructured)
+- **MMOCR** — OpenMMLab 出品，工具箱式 OCR 框架 — [GitHub](https://github.com/open-mmlab/mmocr)
+
+**Image Caption 与文档理解：**
 
 - 2020 · 知乎 — Image Caption 方法总结（一） — [链接](https://zhuanlan.zhihu.com/p/155919332)
 - 2020 · 知乎 — Image Caption 方法总结（二） — [链接](https://zhuanlan.zhihu.com/p/153145011)
